@@ -311,7 +311,111 @@
     font-size: 20px;
   }
 
-  /* ===== KEY MESSAGES ===== */
+  /* ===== NEWS SECTION ===== */
+  .news-section {
+    padding: 32px 24px 32px;
+    background: linear-gradient(180deg, #f8f9fc 0%, white 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .news-list {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .news-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    background: white;
+    border: 2px solid var(--dp-blue-line);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.15s;
+    box-shadow: 0 2px 8px rgba(21,36,132,0.06);
+  }
+  .news-item:active {
+    transform: scale(0.99);
+    background: var(--dp-blue-soft);
+    border-color: var(--dp-blue);
+  }
+  .news-item-icon {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: var(--dp-blue);
+    color: var(--gold);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .news-item-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .news-source {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .news-hot {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: linear-gradient(135deg, #ff3838 0%, #ff6b00 100%);
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 6px rgba(255,56,56,0.35);
+    animation: hotPulse 1.6s ease-in-out infinite;
+  }
+  @keyframes hotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+  .news-item-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+  }
+  .news-comments {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #03c75a;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 6px;
+    letter-spacing: -0.01em;
+  }
+  .news-arrow {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    background: var(--dp-blue-soft);
+    color: var(--dp-blue);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+    /* ===== KEY MESSAGES ===== */
   .message-section {
     padding: 44px 24px 40px;
     background: var(--dp-blue);
@@ -960,6 +1064,51 @@
     </div>
     <div class="hero-poster">
       <img src="/images/hero.jpg" alt="기회를 주십시오 - 민주당 원팀 도지사 이원택" class="hero-img">
+    </div>
+  </section>
+
+  <!-- ===== 주요 뉴스 ===== -->
+  <section class="news-section">
+    <span class="section-tag">📰 전북선거 주요 뉴스</span>
+
+    <div class="news-list">
+      <a href="https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%EC%9B%90%ED%83%9D+%EC%A7%84%EC%95%88+%EC%9E%A5%EB%82%A0+%EB%8F%99%EB%B6%80%EA%B6%8C&sort=1" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">뉴스1 · 2일 전</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">진안 장날 방문, "동부권 성장 동력 만들 것"</div>
+          <div class="news-comments">💬 네이버 댓글 달기</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <a href="https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%EC%9B%90%ED%83%9D+%EB%8B%B9%EC%A0%95%EC%B2%AD+%EC%9B%90%ED%8C%80+%EC%A0%84%EB%B6%81&sort=1" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">오마이뉴스 · 1주 전</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">"당정청 원팀으로 전북 자존심과 미래 책임진다"</div>
+          <div class="news-comments">💬 네이버 댓글 달기</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <a href="https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%EC%9B%90%ED%83%9D+%EC%84%A0%EB%8C%80%EC%9C%84+%EC%8B%AC%EB%B3%B4%EA%B7%A0&sort=1" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">뉴스1 · 2주 전</span>
+          </div>
+          <div class="news-item-title">이원택 선대위 발족, 상임선대위원장에 심보균</div>
+          <div class="news-comments">💬 네이버 댓글 달기</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
     </div>
   </section>
 
