@@ -42,8 +42,8 @@
     --white: #ffffff;
     --cream: #f6f7fb;
     --ink: #0a0e2a;
-    --muted: #4a5568;
-    --line: #dde2ed;
+    --muted: #3a4456;
+    --line: #c5cde0;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,8 +52,8 @@
     font-family: var(--font-base);
     background: var(--cream);
     color: var(--ink);
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
   }
@@ -136,13 +136,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px;
+    padding: 17px 20px;
     background: linear-gradient(135deg, var(--dp-blue) 0%, var(--dp-blue-deep) 100%);
     color: white;
   }
   .party-mark {
     display: flex; align-items: center; gap: 8px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 900;
   }
   .party-mark-icon {
@@ -309,6 +309,164 @@
     color: #8a1212;
     border: 1px dashed var(--warn-red);
     font-size: 20px;
+  }
+
+  .hero-poster { position: relative; }
+  .hero-overlay-text {
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    z-index: 2;
+  }
+  .hero-ot-line1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.8);
+  }
+  .hero-ot-line2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.9);
+  }
+  .hero-ot-underline {
+    width: 220px;
+    height: 7px;
+    background: var(--dp-blue);
+    border-radius: 4px;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+
+  /* ===== 이원택의 약속 3카테고리 ===== */
+  .promise-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .promise-cat-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 26px 10px;
+    background: white;
+    border: 2.5px solid var(--line);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: var(--font-base);
+  }
+  .promise-cat-btn:active { transform: scale(0.97); }
+  .promise-cat-btn.active {
+    border-color: var(--cat-color);
+    background: color-mix(in srgb, var(--cat-color) 8%, white);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--cat-color) 25%, transparent);
+  }
+  .promise-cat-icon { font-size: 40px; line-height: 1; }
+  .promise-cat-name {
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .promise-cat-sub {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cat-color);
+  }
+  .pledge-check {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900;
+  }
+
+
+  /* 공약 슬로건 + 그룹 */
+  .pledge-slogan {
+    color: white;
+    padding: 16px 18px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .pledge-slogan-tag {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 5px;
+    letter-spacing: 0;
+  }
+  .pledge-group { margin-bottom: 18px; }
+  .pledge-group:last-child { margin-bottom: 0; }
+  .pledge-group-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .pledge-group-bar {
+    display: inline-block;
+    width: 4px; height: 16px;
+    border-radius: 2px;
+  }
+
+
+
+  .pledge-core-num {
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 3px 9px;
+    border-radius: 6px;
+    margin-right: 8px;
+    letter-spacing: 0;
+    vertical-align: middle;
+  }
+
+
+  .promise-slogan-banner {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dp-blue) 0%, var(--dp-blue-deep) 100%);
+    padding: 14px 22px;
+    border-radius: 14px;
+    margin: 6px 0 4px;
+    box-shadow: 0 4px 14px rgba(21,36,132,0.25);
+  }
+  .psb-line1 {
+    display: inline;
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+  .psb-line2 {
+    display: inline;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+    margin-left: 4px;
   }
 
   /* ===== NEWS SECTION ===== */
@@ -485,12 +643,12 @@
     border-radius: 10px !important;
   }
   .news-item-compact .news-source {
-    font-size: 12.5px !important;
+    font-size: 13px !important;
     margin-bottom: 4px;
     font-weight: 700;
   }
   .news-item-compact .news-item-title {
-    font-size: 16.5px !important;
+    font-size: 17px !important;
     line-height: 1.4 !important;
     font-weight: 800 !important;
   }
@@ -587,7 +745,7 @@
     flex-wrap: wrap;
   }
   .news-source {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
     font-weight: 700;
   }
@@ -610,7 +768,7 @@
     50% { transform: scale(1.06); }
   }
   .news-item-title {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 800;
     color: var(--ink);
     letter-spacing: -0.025em;
@@ -621,9 +779,9 @@
     align-items: center;
     gap: 5px;
     margin-top: 10px;
-    padding: 5px 10px;
+    padding: 7px 12px;
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
     border-radius: 6px;
     letter-spacing: -0.01em;
@@ -663,7 +821,7 @@
     display: inline-block;
     background: var(--dp-blue);
     color: white;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 900;
     padding: 8px 16px;
     border-radius: 999px;
@@ -674,7 +832,7 @@
     color: var(--dp-blue-deep);
   }
   .section-title {
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.035em;
@@ -685,7 +843,7 @@
   .section-title .red { color: var(--warn-red); }
   .section-title .accent { color: var(--gold-deep); }
   .section-desc {
-    font-size: 17px;
+    font-size: 19px;
     color: var(--muted);
     margin-top: 8px;
     font-weight: 500;
@@ -788,7 +946,7 @@
     border-radius: 14px;
     box-shadow: 0 2px 6px rgba(21,36,132,0.08);
     font-family: var(--font-base);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--ink);
     cursor: pointer;
@@ -865,13 +1023,13 @@
     border-bottom: 2px solid var(--dp-blue-soft);
   }
   .pledge-region {
-    font-size: 28px;
+    font-size: 19px;
     font-weight: 900;
-    color: var(--dp-blue);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
   }
   .pledge-count {
-    font-size: 14px;
+    font-size: 16px;
     background: var(--gold);
     color: var(--dp-blue-deep);
     padding: 7px 14px;
@@ -892,10 +1050,10 @@
   .pledge-list { list-style: none; display: grid; gap: 8px; }
   .pledge-item {
     display: flex; gap: 14px; align-items: flex-start;
-    padding: 14px 14px;
+    padding: 16px 16px;
     background: var(--cream);
     border-radius: 12px;
-    font-size: 19px;
+    font-size: 21px;
     line-height: 1.5;
     font-weight: 500;
   }
@@ -951,7 +1109,7 @@
     font-size: 24px;
   }
   .vote-card.primary .vote-icon { background: var(--gold); color: var(--dp-blue-deep); }
-  .vote-label { font-size: 15px; opacity: 0.8; font-weight: 700; }
+  .vote-label { font-size: 20px; opacity: 0.8; font-weight: 700; }
   .vote-card.primary .vote-label { color: var(--gold); opacity: 1; }
   .vote-value { font-size: 21px; font-weight: 900; margin-top: 4px; }
   .vote-extra { font-size: 15px; opacity: 0.75; margin-top: 4px; font-weight: 500; }
@@ -991,11 +1149,11 @@
   .addr-input {
     flex: 1 1 0;
     min-width: 0;
-    padding: 20px 14px;
+    padding: 22px 14px;
     border: 2px solid var(--dp-blue-line);
     border-radius: 12px;
     font-family: var(--font-base);
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 500;
     color: var(--ink);
     background: white;
@@ -1191,7 +1349,7 @@
   .bio-role { font-size: 15px; color: var(--muted); margin-top: 4px; font-weight: 500; }
   .bio-list { list-style: none; }
   .bio-list li {
-    font-size: 18px; color: var(--ink);
+    font-size: 20px; color: var(--ink);
     padding: 9px 0;
     border-bottom: 1px dashed var(--dp-blue-line);
     line-height: 1.55;
@@ -1209,7 +1367,7 @@
   .share-section { padding: 22px 24px; background: white; border-top: 1px solid var(--line); }
   .share-title {
     text-align: center;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 800;
     color: var(--ink);
     margin-bottom: 16px;
@@ -1217,11 +1375,11 @@
   }
   .share-btn {
     width: 100%;
-    padding: 20px;
+    padding: 24px;
     border-radius: 14px;
     border: none;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 21px;
     cursor: pointer;
     font-family: var(--font-base);
     transition: all 0.15s;
@@ -1307,7 +1465,12 @@
       <div class="election-tag">제9회 지방선거</div>
     </div>
     <div class="hero-poster">
-      <img src="/images/hero.jpg?v=930152" alt="기회를 주십시오 - 민주당 원팀 도지사 이원택" class="hero-img">
+      <img src="/images/hero.jpg?v=968325" alt="오로지 전북, 반드시 체감 성장 - 민주당 원팀 도지사 이원택" class="hero-img">
+      <div class="hero-overlay-text">
+        <div class="hero-ot-line1">오로지 전북</div>
+        <div class="hero-ot-line2">반드시 체감 성장</div>
+        <div class="hero-ot-underline"></div>
+      </div>
     </div>
   </section>
 
@@ -1316,7 +1479,7 @@
     <span class="section-tag">📰 전북선거 주요 뉴스</span>
 
     <div class="news-list">
-      <!-- 1. 한국갤럽 여론조사 (HOT, 메인) -->
+      <!-- 큰 카드 1: 한국갤럽 여론조사 (HOT) -->
       <a href="http://www.thebestnews.co.kr/bbs/board.php?bo_table=news&wr_id=73970" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-poll">📊</div>
         <div class="news-item-body">
@@ -1330,27 +1493,20 @@
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 2. 이원택 "김관영 교감설 거짓" (연합뉴스) -->
-      <a href="https://n.news.naver.com/article/001/0016104761?sid=100" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+      <!-- 큰 카드 2: 연합뉴스 교감설 -->
+      <a href="https://n.news.naver.com/article/001/0016104761?sid=100" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-naver">N</div>
         <div class="news-item-body">
-          <div class="news-source">네이버 · 연합뉴스</div>
+          <div class="news-meta">
+            <span class="news-source">네이버 · 연합뉴스</span>
+          </div>
           <div class="news-item-title">이원택 "김관영의 '대통령과 교감설'은 거짓…중대한 선거범죄"</div>
+          <div class="news-comments news-comments-naver">💬 네이버 댓글 달기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 3. 민주당 결집, 도의회 의장단 지지 (서울신문) -->
-      <a href="https://n.news.naver.com/article/081/0003647656?sid=100" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-naver">N</div>
-        <div class="news-item-body">
-          <div class="news-source">네이버 · 서울신문</div>
-          <div class="news-item-title">전북 민주당 결집 호소…역대 도의회 의장단·현직 도의원 "이원택 지지" 촉구</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 4. 與 여론조사 (뉴시스) -->
+      <!-- 작은 카드 3개 -->
       <a href="https://n.news.naver.com/mnews/article/003/0013973101?sid=162" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-naver">N</div>
         <div class="news-item-body">
@@ -1360,7 +1516,6 @@
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 5. 전북발전연합회 (뉴시스) -->
       <a href="https://n.news.naver.com/article/003/0013972394" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-naver">N</div>
         <div class="news-item-body">
@@ -1369,18 +1524,31 @@
         </div>
         <div class="news-arrow">→</div>
       </a>
-
-      <!-- 6. 유튜브 -->
-      <a href="https://www.youtube.com/watch?v=pIxaP5gSg_o" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-youtube">▶</div>
+      <a href="https://n.news.naver.com/article/081/0003647656?sid=100" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+        <div class="news-item-icon news-icon-naver">N</div>
         <div class="news-item-body">
-          <div class="news-source">유튜브 영상</div>
-          <div class="news-item-title">"김관영 후보, 대통령과 교감?"…역대급 단호, 못 박은 청와대</div>
+          <div class="news-source">네이버 · 서울신문</div>
+          <div class="news-item-title">전북 민주당 결집 호소…역대 도의회 의장단·현직 도의원 "이원택 지지" 촉구</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
     </div>
   </section>
+
+  <section class="picker-section alt">
+    <span class="section-tag gold">이원택의 약속</span>
+    <div class="promise-slogan-banner">
+      <span class="psb-line1">오로지 전북,</span>
+      <span class="psb-line2">반드시 체감성장</span>
+    </div>
+    <p class="section-desc">▼ 관심 있는 분야를 손가락으로 눌러보세요</p>
+
+    <div class="promise-cat-grid" id="promiseCatGrid"></div>
+    <div id="promiseCatArea">
+      <div class="pledge-empty">↑ 위에서 분야 버튼을 눌러주시면<br>공약이 나타납니다</div>
+    </div>
+  </section>
+
 
   <!-- ===== 공유 ===== -->
   <section class="share-section">
@@ -1489,54 +1657,6 @@
   </section>
 
   <!-- ===== KEY MESSAGES (3대 약속) ===== -->
-  <section class="message-section">
-    <span class="section-tag">3대 핵심 약속</span>
-    <h2 class="section-title">민주당 원팀이<br><span class="accent">전북을 大도약</span>시킵니다</h2>
-
-
-    <div class="promise-card">
-      <div class="promise-num">
-        <span class="promise-num-circle">1</span>
-        <span>원팀의 힘</span>
-      </div>
-      <div class="promise-title">대통령실·중앙정부·민주당과<br><span class="accent">바로 연결되는 도지사</span></div>
-      <div class="promise-desc">청와대·정무부지사·재선 국회의원 출신.<br>중앙정부 예산을 직접 가져오는 베테랑.</div>
-      <div class="promise-tags">
-        <span class="promise-tag">#대통령실</span>
-        <span class="promise-tag">#중앙정부</span>
-        <span class="promise-tag">#예산확보</span>
-      </div>
-    </div>
-
-
-    <div class="promise-card">
-      <div class="promise-num">
-        <span class="promise-num-circle">2</span>
-        <span>100년 먹거리</span>
-      </div>
-      <div class="promise-title"><span class="accent">AI 반도체 200조</span> 유치<br>전북 100년 먹거리 완성</div>
-      <div class="promise-desc">삼성·하이닉스 첨단산업 유치.<br>민주당 정부와 한 팀이어야 가능합니다.</div>
-      <div class="promise-tags">
-        <span class="promise-tag">#AI반도체</span>
-        <span class="promise-tag">#200조</span>
-        <span class="promise-tag">#첨단산업</span>
-      </div>
-    </div>
-
-    <div class="promise-card">
-      <div class="promise-num">
-        <span class="promise-num-circle">3</span>
-        <span>농민이 웃는 전북</span>
-      </div>
-      <div class="promise-title">전북 농민에게<br><span class="accent">매달 농민수당</span></div>
-      <div class="promise-desc">농민수당 시·군 확대 + 가격보장 + 햇빛·바람 연금.<br>전 농어민위원장이 직접 챙깁니다.</div>
-      <div class="promise-tags">
-        <span class="promise-tag">#농민수당</span>
-        <span class="promise-tag">#가격보장</span>
-        <span class="promise-tag">#햇빛바람연금</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== 시·군별 공약 ===== -->
   <section class="picker-section">
@@ -1551,16 +1671,6 @@
   </section>
 
   <!-- ===== 세대별 공약 ===== -->
-  <section class="picker-section alt">
-    <span class="section-tag gold">나에게 맞는 약속</span>
-    <h2 class="section-title">청년·어르신·농민,<br><span class="blue">각자의 맞춤 공약</span></h2>
-    <p class="section-desc">▼ 본인에게 해당하는 분야를 눌러보세요</p>
-
-    <div class="age-grid" id="ageGrid"></div>
-    <div id="agePledgeArea">
-      <div class="pledge-empty">↑ 위에서 해당 분야 버튼을 눌러주시면<br>공약이 나타납니다</div>
-    </div>
-  </section>
 
   <!-- ===== 사전투표 안내 ===== -->
   <section class="vote-section">
@@ -1764,46 +1874,149 @@
     setTimeout(() => area.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
   }
 
-  // ===== 세대별 공약 =====
-  const ageData = {
-    '청년': {icon:'🎓', sub:'20~30대', title:'청년에게 더 많은 기회를 약속합니다', pledges:['1천원 청년주택 공급','1천만원 예식비용 지원','중소기업 청년 복지카드 도입','생성형 AI 구독료 지원 점진적 확대','기업연계 서포터즈 활동 지원 및 공모대회 개최','진짜 전북 청년 스타트업 지원']},
-    '여성·가족': {icon:'🏡', sub:'돌봄·육아', title:'여성도 가족도 안심하는 전북', pledges:['전북형 전세대 포괄 SOS 돌봄센터 구축','전북 핵심 복지거점 리뉴얼','산후조리비 지원','여성 1인 가구 안심세트 지원','사회복지종사자 「전북형 표준임금체계」 도입']},
-    '어르신': {icon:'👵', sub:'경로·복지', title:'어르신의 편안한 일상을 약속합니다', pledges:['도농복합형 실버타운 조성','경로당 무상급식 확대 및 반찬 제공','임플란트 및 틀니 치료 지원 확대','경로당 회장·총무 활동비 지급']},
-    '농어민': {icon:'🌾', sub:'농민수당·소득', title:'농어민이 웃는 전북을 약속합니다', pledges:['농어촌기본소득(농민수당) 시·군 확대','농산물 가격보장 정책 확대 · 농업소득 안정화','후계농 및 청년농 체계적 육성 및 지원','햇빛·바람 연금 지급 (재생에너지 연계)','기후위기 대응형 스마트 농수산업 및 산림·임업 육성','전북 로컬푸드를 농림수축산까지 확장']},
-    '40·50대': {icon:'💼', sub:'경제 허리', title:'40·50대, 경제의 허리를 든든하게 받쳐드립니다', pledges:['4050 이중 돌봄 시스템 도입 (자녀+부모 동시 돌봄)','중장년 재취업·전직 지원 확대','4050 세대 경제적 부담 완화 정책','재생에너지 기반 연금 도시 조성으로 안정 소득','4050 지역사회 적극 참여 기반 마련']},
-    '문화·평생': {icon:'🎭', sub:'모든 세대', title:'삶과 함께하는 문화를 만들겠습니다', pledges:['전북 평생문화동행 사업','동네 민간 문화공간을 생활거점으로','찾아가는 문화예술 활성화','문화누리카드 확대 지원']}
+  // ===== 이원택의 약속 (PDF 공보 기반 정밀 설계) =====
+  const promiseCatData = {
+    '어르신': {
+      icon: '👵', sub: '선배시민', color: '#c0392b',
+      label: '선배시민을 위한 공약',
+      slogan: '살던 집에서 끝까지, 살던 곳에서 존엄하게',
+      tagline: '전북형 AIP · 선배시민 예우',
+      groups: [
+        {
+          title: '돌봄과 일자리로 보답',
+          pledges: [
+            '손주돌봄수당 월 최대 60만 원 지원',
+            '어르신 일자리 1만 개 신설 (총 10만 개)',
+            '전북맞춤형 일자리 연 240억 원 투자'
+          ]
+        },
+        {
+          title: '경로당 중심 따뜻한 일상',
+          pledges: [
+            '경로당 5일 무상급식 · 주 2회 반찬',
+            '회장·총무 활동비 최대 10만 원',
+            '전북형 도농복합 실버타운 조성'
+          ]
+        },
+        {
+          title: '살던 곳에서 건강하고 안전하게',
+          pledges: [
+            '온-경로 비대면 진료 · 임플란트 4개 확대',
+            '전동휠체어 출장수리 · 그냥해드림센터',
+            '경로당 안전손잡이·문턱 제거'
+          ]
+        }
+      ]
+    },
+    '4050': {
+      icon: '💼', sub: '전북의 허리', color: '#1e6f3c',
+      label: '4050 지원 공약',
+      slogan: '4050세대, 이제 전북이 빚을 갚겠습니다',
+      tagline: '경험은 퇴직하지 않습니다',
+      groups: [
+        {
+          title: '이중돌봄 부담 완화',
+          pledges: [
+            '전북형 SOS 돌봄체계 구축',
+            '치매·요양·야간 긴급돌봄 확대',
+            '비대면 돌봄·의료체계 강화'
+          ]
+        },
+        {
+          title: '경력전환·재취업 지원',
+          pledges: [
+            '전북형 중장년 경력전환 플랫폼',
+            'AI·재생에너지 연계 전환교육',
+            '재취업 패키지 · 스타기업 채용 확대'
+          ]
+        },
+        {
+          title: '소상공인·노후 안심',
+          pledges: [
+            '1%대 초저금리 대환대출 · 공공배달앱',
+            '원스톱 성장지원센터 · 프랜차이즈 100개',
+            '평생교육 · 생애전환 · 노후 준비 지원'
+          ]
+        }
+      ]
+    },
+    '메가비전': {
+      icon: '🚀', sub: '200조 대전환', color: '#152484',
+      label: '메가비전 공약',
+      slogan: '"200조" 대한민국 산업지도를 다시 씁니다',
+      tagline: '새만금 200조 프로젝트',
+      groups: [
+        {
+          title: '새만금 200조 AI반도체 국가산단',
+          pledges: [
+            '삼성전자·SK하이닉스 AI반도체 공장 유치',
+            '반도체 소부장 기업 100개사 동반 진출',
+            '총 200조 투자 · 20만 개 일자리 창출'
+          ]
+        },
+        {
+          title: '재생에너지·첨단산업 거점',
+          pledges: [
+            '2040년 재생에너지 30GW · RE100 전력망',
+            '방위산업·그린수소·2차전지 강화',
+            '현대차그룹 9조 원 투자 마중물'
+          ]
+        },
+        {
+          title: '빠른 교통·미래 배후도시',
+          pledges: [
+            '호남선 고속열차 · 전라선 수서행 KTX',
+            '전주 교육·금융·문화 배후도시 육성',
+            '새만금 국제학교 · K-푸드혁신벨트'
+          ]
+        }
+      ]
+    }
   };
-  const ageOrder = ['청년','여성·가족','어르신','농어민','40·50대','문화·평생'];
+  const promiseCatOrder = ['어르신', '4050', '메가비전'];
 
-  document.getElementById('ageGrid').innerHTML = ageOrder.map(k => {
-    const d = ageData[k];
-    return `<button class="age-btn" onclick="selectAge('${k}', this)">
-      <span class="age-btn-icon">${d.icon}</span>
-      <span class="age-btn-label">${k}</span>
-      <span class="age-btn-sub">${d.sub}</span>
+  document.getElementById('promiseCatGrid').innerHTML = promiseCatOrder.map(k => {
+    const d = promiseCatData[k];
+    return `<button class="promise-cat-btn" onclick="selectPromiseCat('${k}', this)" style="--cat-color:${d.color}">
+      <span class="promise-cat-icon">${d.icon}</span>
+      <span class="promise-cat-name">${k}</span>
+      <span class="promise-cat-sub">${d.sub}</span>
     </button>`;
   }).join('');
 
-  function selectAge(key, btnEl) {
-    document.querySelectorAll('.age-btn').forEach(b => b.classList.remove('active'));
+  function selectPromiseCat(key, btnEl) {
+    document.querySelectorAll('.promise-cat-btn').forEach(b => b.classList.remove('active'));
     btnEl.classList.add('active');
-    const d = ageData[key];
-    const area = document.getElementById('agePledgeArea');
-    area.innerHTML = `
-      <div class="pledge-box">
-        <div class="pledge-header">
-          <div class="pledge-region">${d.icon} ${key}</div>
-          <div class="pledge-count">${d.pledges.length}개 약속</div>
+    const d = promiseCatData[key];
+    const area = document.getElementById('promiseCatArea');
+
+    const groupsHtml = d.groups.map((g, gi) => `
+      <div class="pledge-group">
+        <div class="pledge-group-title" style="color:${d.color}">
+          <span class="pledge-core-num" style="background:${d.color}">핵심 ${gi+1}</span>
+          ${g.title}
         </div>
-        <div class="pledge-onTeam">${d.title}</div>
         <ul class="pledge-list">
-          ${d.pledges.map((p, i) => `
+          ${g.pledges.map(p => `
             <li class="pledge-item">
-              <span class="pledge-check">${i+1}</span>
+              <span class="pledge-check" style="background:${d.color}">✓</span>
               <span>${p}</span>
             </li>
           `).join('')}
         </ul>
+      </div>
+    `).join('');
+
+    area.innerHTML = `
+      <div class="pledge-box" style="border-color:${d.color}">
+        <div class="pledge-header" style="border-color:${d.color}22">
+          <div class="pledge-region" style="color:${d.color}">${d.icon} ${d.label || (key + ' 공약')}</div>
+        </div>
+        <div class="pledge-slogan" style="background:${d.color};">
+          <span class="pledge-slogan-tag">${d.tagline}</span>
+          ${d.slogan}
+        </div>
+        ${groupsHtml}
       </div>
     `;
     setTimeout(() => area.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
