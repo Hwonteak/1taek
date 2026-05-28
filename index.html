@@ -312,6 +312,195 @@
   }
 
   /* ===== NEWS SECTION ===== */
+  /* ★ FEATURED (HOT) 카드 */
+  .news-featured {
+    display: block;
+    background: linear-gradient(135deg, var(--dp-blue) 0%, #0a1554 100%);
+    border: 3px solid var(--gold);
+    border-radius: 18px;
+    padding: 20px 18px 18px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(21,36,132,0.35);
+    margin-bottom: 14px;
+    animation: featuredGlow 2s ease-in-out infinite;
+  }
+  @keyframes featuredGlow {
+    0%, 100% { box-shadow: 0 8px 24px rgba(21,36,132,0.35), 0 0 0 0 rgba(255,216,61,0.4); }
+    50%       { box-shadow: 0 8px 28px rgba(21,36,132,0.45), 0 0 0 8px rgba(255,216,61,0.0); }
+  }
+  .news-featured:active { transform: scale(0.99); }
+
+  .news-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #ff3838 0%, #ff6b00 100%);
+    color: white;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 5px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 3px 8px rgba(255,56,56,0.4);
+    margin-bottom: 12px;
+  }
+  .news-featured-fire {
+    font-size: 14px;
+    animation: fireShake 0.6s ease-in-out infinite alternate;
+  }
+  @keyframes fireShake {
+    from { transform: rotate(-6deg); }
+    to   { transform: rotate(6deg); }
+  }
+
+  .news-featured-headline {
+    font-size: 17px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  .news-featured-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 16px 12px;
+  }
+  .num-block {
+    flex: 1;
+    text-align: center;
+  }
+  .num-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .num-mine .num-name { color: var(--gold); }
+  .num-rival .num-name { color: rgba(255,255,255,0.65); }
+
+  .num-percent {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .num-mine .num-percent { color: var(--gold); }
+  .num-rival .num-percent { color: rgba(255,255,255,0.55); }
+
+  .num-pct {
+    font-size: 22px;
+    margin-left: 2px;
+  }
+
+  .num-vs {
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .news-featured-lead {
+    text-align: center;
+    background: var(--gold);
+    color: var(--dp-blue-deep);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .news-featured-lead strong {
+    font-size: 17px;
+    font-weight: 900;
+  }
+  .lead-arrow {
+    color: #ff3838;
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  .featured-pr-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .featured-pr-accent {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(255,216,61,0.4);
+  }
+
+  .featured-pr-message {
+    background: rgba(255,255,255,0.10);
+    border-left: 4px solid var(--gold);
+    padding: 14px 14px 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+  .featured-pr-message strong {
+    color: var(--gold);
+    font-weight: 800;
+  }
+
+  .news-featured-cta {
+    background: white;
+    color: var(--dp-blue-deep);
+    text-align: center;
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+    line-height: 1.4;
+  }
+
+  /* compact 카드 (작게) */
+  .news-item-compact {
+    padding: 13px 14px !important;
+    gap: 12px !important;
+  }
+  .news-item-compact .news-item-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 19px !important;
+    border-radius: 10px !important;
+  }
+  .news-item-compact .news-source {
+    font-size: 12.5px !important;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .news-item-compact .news-item-title {
+    font-size: 16.5px !important;
+    line-height: 1.4 !important;
+    font-weight: 800 !important;
+  }
+  .news-item-compact .news-arrow {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 14px !important;
+  }
+
+
   .news-section {
     padding: 24px 24px 24px;
     background: linear-gradient(180deg, #f8f9fc 0%, white 100%);
@@ -355,6 +544,15 @@
     font-weight: 900;
   }
   .news-icon-daum { background: #0072e3; color: white; }
+  .news-icon-poll {
+    background: linear-gradient(135deg, var(--dp-blue) 0%, #2a3eaf 100%);
+    color: var(--gold);
+    font-size: 24px;
+  }
+  .news-comments-poll {
+    background: linear-gradient(135deg, var(--dp-blue) 0%, #2a3eaf 100%);
+    color: var(--gold);
+  }
   .news-icon-press {
     background: var(--dp-blue);
     color: var(--gold);
@@ -1118,54 +1316,55 @@
     <span class="section-tag">📰 전북선거 주요 뉴스</span>
 
     <div class="news-list">
-      <a href="https://www.youtube.com/watch?v=pIxaP5gSg_o" target="_blank" rel="noopener noreferrer" class="news-item">
+      <a href="http://www.thebestnews.co.kr/bbs/board.php?bo_table=news&wr_id=73970" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon news-icon-poll">📊</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">한국복지신문 · 한국갤럽</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">[한국복지신문－한국갤럽 3차 여론조사] 이원택 후보 46%, 김관영 후보 38%</div>
+          <div class="news-comments news-comments-poll">📰 기사 바로가기</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+      <!-- compact 카드들 -->
+      <a href="https://www.youtube.com/watch?v=pIxaP5gSg_o" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-youtube">▶</div>
         <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">유튜브 영상</span>
-          </div>
+          <div class="news-source">유튜브 영상</div>
           <div class="news-item-title">"김관영 후보, 대통령과 교감?"…역대급 단호, 못 박은 청와대</div>
-          <div class="news-comments news-comments-youtube">💬 유튜브 댓글 보기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <a href="https://www.news1.kr/local/jeonbuk/6179921" target="_blank" rel="noopener noreferrer" class="news-item">
+      <a href="https://www.news1.kr/local/jeonbuk/6179921" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">뉴스1</span>
-          </div>
+          <div class="news-source">뉴스1</div>
           <div class="news-item-title">전 전북도의장·부의장 9명, 이원택 도지사 후보 지지 선언</div>
-          <div class="news-comments news-comments-press">📄 기사 보러가기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <a href="https://www.mhns.co.kr/news/articleView.html?idxno=748538" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-press">📰</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">더쎈뉴스</span>
-          </div>
-          <div class="news-item-title">민주당 이원택, 김관영 후보 정면 비판</div>
-          <div class="news-comments news-comments-press">📄 기사 보러가기</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008582388&plink=ORI&cooper=NAVER" target="_blank" rel="noopener noreferrer" class="news-item">
+      <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008582388&plink=ORI&cooper=NAVER" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-sbs">📺</div>
         <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">SBS 뉴스</span>
-          </div>
+          <div class="news-source">SBS 뉴스</div>
           <div class="news-item-title">청와대 "통화한적 없어"·"후보 사퇴해야" vs "아전인수"</div>
-          <div class="news-comments news-comments-sbs">📺 SBS 보러가기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
     </div>
+  </section>
+
+  <!-- ===== 공유 ===== -->
+  <section class="share-section">
+    <div class="share-title">친구에게 알리기</div>
+    <button class="share-btn share-btn-kakao" onclick="shareKakao()">
+      <span class="share-btn-icon">💬</span>
+      <span>카카오톡으로 공유</span>
+    </button>
   </section>
 
   <!-- ===== ONE TEAM 비교 ===== -->
@@ -1415,19 +1614,6 @@
         <li>전북대학교 화학공학과 졸업</li>
       </ul>
     </div>
-  </section>
-
-  <!-- ===== 공유 ===== -->
-  <section class="share-section">
-    <div class="share-title">친구에게 알리기</div>
-    <button class="share-btn share-btn-kakao" onclick="shareKakao()">
-      <span class="share-btn-icon">💬</span>
-      <span>카카오톡으로 공유</span>
-    </button>
-    <button class="share-btn share-btn-copy" onclick="copyLink()">
-      <span class="share-btn-icon">🔗</span>
-      <span>링크 복사하기</span>
-    </button>
   </section>
 
   <!-- ===== 푸터 ===== -->
