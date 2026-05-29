@@ -516,6 +516,160 @@
 
 
 
+
+  /* ===== 친구 공유 (UI 개선) ===== */
+  .share-section {
+    text-align: center;
+    padding: 28px 18px 32px !important;
+    background: linear-gradient(180deg, #fffef5 0%, #fff8d1 100%) !important;
+    border-top: 3px solid var(--gold) !important;
+    border-bottom: 3px solid var(--gold) !important;
+  }
+  .share-urgent-tag {
+    display: inline-block;
+    background: var(--warn-red);
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    animation: pulse-tag 1.6s infinite;
+  }
+  @keyframes pulse-tag {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+  .share-title-new {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+  }
+  .share-title-emph {
+    color: var(--dp-blue);
+    background: linear-gradient(180deg, transparent 65%, var(--gold) 65%);
+    padding: 0 4px;
+  }
+  .share-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  /* MEGA 카카오톡 버튼 */
+  .share-btn-mega {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    background: #FEE500;
+    color: #181600;
+    border: none;
+    padding: 22px 22px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: var(--font-base);
+    box-shadow: 0 6px 18px rgba(254,229,0,0.45), 0 0 0 0 rgba(254,229,0,0.7);
+    transition: all 0.18s;
+    margin-bottom: 14px;
+    animation: pulse-mega 2.2s infinite;
+  }
+  @keyframes pulse-mega {
+    0%, 100% { box-shadow: 0 6px 18px rgba(254,229,0,0.45), 0 0 0 0 rgba(254,229,0,0.7); }
+    50% { box-shadow: 0 6px 18px rgba(254,229,0,0.5), 0 0 0 10px rgba(254,229,0,0); }
+  }
+  .share-btn-mega:active {
+    transform: scale(0.97);
+  }
+  .share-btn-mega-icon {
+    font-size: 42px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .share-btn-mega-text {
+    flex: 1;
+    text-align: left;
+  }
+  .share-btn-mega-main {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .share-btn-mega-sub {
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.75;
+    margin-top: 3px;
+  }
+  .share-btn-mega-arrow {
+    font-size: 28px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  
+  /* 보조 버튼 (링크복사, 문자) */
+  .share-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .share-mini-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid var(--line);
+    color: var(--ink);
+    padding: 14px 10px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: var(--font-base);
+    transition: all 0.15s;
+  }
+  .share-mini-btn:active {
+    transform: scale(0.96);
+    background: var(--cream);
+  }
+  .share-mini-icon { font-size: 18px; }
+  
+  /* ===== FLOATING SHARE BUTTON (FAB) ===== */
+  .share-fab {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 99;
+    background: #FEE500;
+    color: #181600;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 900;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 0 rgba(254,229,0,0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-base);
+    animation: fab-pulse 2.5s infinite;
+    transition: transform 0.15s;
+  }
+  @keyframes fab-pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 0 rgba(254,229,0,0.7); }
+    50% { box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 12px rgba(254,229,0,0); }
+  }
+  .share-fab:active { transform: scale(0.94); }
+  .share-fab-icon { font-size: 22px; }
+
+
   /* ===== NEWS SECTION ===== */
   /* ★ FEATURED (HOT) 카드 */
   .news-featured {
@@ -1410,55 +1564,6 @@
     font-weight: 900;
   }
 
-  /* ===== SHARE ===== */
-  .share-section { padding: 22px 24px; background: white; border-top: 1px solid var(--line); }
-  .share-title {
-    text-align: center;
-    font-size: 21px;
-    font-weight: 800;
-    color: var(--ink);
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-  .share-btn {
-    width: 100%;
-    padding: 24px;
-    border-radius: 14px;
-    border: none;
-    font-weight: 900;
-    font-size: 21px;
-    cursor: pointer;
-    font-family: var(--font-base);
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .share-btn:last-child { margin-bottom: 0; }
-  .share-btn:active { transform: scale(0.98); }
-  .share-btn-icon {
-    font-size: 22px;
-    line-height: 1;
-  }
-  .share-btn-kakao {
-    background: #FEE500;
-    color: #181600;
-  }
-  .share-btn-kakao:active {
-    background: #f5db00;
-  }
-  .share-btn-copy {
-    background: var(--dp-blue);
-    color: white;
-    border: 2px solid var(--dp-blue);
-  }
-  .share-btn-copy:active {
-    background: var(--dp-blue-deep);
-  }
-
   /* ===== FOOTER ===== */
   footer {
     background: var(--ink);
@@ -1611,11 +1716,29 @@
 
   <!-- ===== 친구에게 알리기 (카카오톡 공유) ===== -->
   <section class="share-section">
-    <div class="share-title">오로지 전북, 친구에게 알리기</div>
-    <button class="share-btn share-btn-kakao" onclick="shareKakao()">
-      <span class="share-btn-icon">💬</span>
-      <span>카카오톡으로 공유</span>
+    <div class="share-urgent-tag">🔥 사전투표 진행 중!</div>
+    <div class="share-title-new">한 명에게라도 더<br><span class="share-title-emph">전북의 미래</span>를 알려주세요</div>
+    <div class="share-subtitle">단 5초면 친구·가족에게 공유 가능합니다</div>
+    
+    <button class="share-btn-mega" onclick="shareKakao()">
+      <span class="share-btn-mega-icon">💬</span>
+      <div class="share-btn-mega-text">
+        <div class="share-btn-mega-main">카카오톡으로 공유</div>
+        <div class="share-btn-mega-sub">친구에게 1초 만에 보내기</div>
+      </div>
+      <span class="share-btn-mega-arrow">→</span>
     </button>
+    
+    <div class="share-secondary">
+      <button class="share-mini-btn" onclick="copyLink()">
+        <span class="share-mini-icon">📋</span>
+        <span>링크 복사</span>
+      </button>
+      <button class="share-mini-btn" onclick="shareSMS()">
+        <span class="share-mini-icon">💌</span>
+        <span>문자로 보내기</span>
+      </button>
+    </div>
   </section>
 
   <!-- ===== ONE TEAM 비교 ===== -->
@@ -1845,6 +1968,30 @@
       alert('카카오톡 공유 기능을 불러오는 중입니다.\n잠시 후 다시 시도해주세요.');
       return;
     }
+  
+  function copyLink() {
+    const url = 'https://1taek.vercel.app/';
+    const okMsg = '✅ 링크가 복사되었습니다!\n친구·가족에게 붙여넣기로 보내주세요.';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function(){ alert(okMsg); }).catch(function(){
+        var ta = document.createElement('textarea');
+        ta.value = url; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert(okMsg); } catch(e) { prompt('아래 링크를 복사하세요:', url); }
+        document.body.removeChild(ta);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); alert(okMsg); } catch(e) { prompt('아래 링크를 복사하세요:', url); }
+      document.body.removeChild(ta);
+    }
+  }
+  
+  function shareSMS() {
+    var msg = '오로지 전북, 반드시 체감성장!\n민주당 원팀 도지사 이원택을 응원합니다.\n👉 https://1taek.vercel.app/';
+    window.location.href = 'sms:?body=' + encodeURIComponent(msg);
+  }
+
     if (!window.Kakao.isInitialized()) {
       try {
         window.Kakao.init(KAKAO_APP_KEY);
@@ -2245,27 +2392,17 @@
   document.getElementById('addrInput').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); searchByAddress(); }
   });
-
-  function copyLink() {
-    const url = SITE_URL;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(() => alert('링크가 복사되었습니다')).catch(() => fallback(url));
-    } else { fallback(url); }
-  }
-  function fallback(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); alert('링크가 복사되었습니다'); }
-    catch (e) { alert('수동으로 주소를 복사해주세요'); }
-    document.body.removeChild(ta);
-  }
 </script>
   <!-- Vercel Analytics (방문자 통계) -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <!-- ===== FLOATING SHARE BUTTON ===== -->
+  <button class="share-fab" onclick="shareKakao()" aria-label="카카오톡 공유">
+    <span class="share-fab-icon">💬</span>
+    <span>공유</span>
+  </button>
+
 </body>
 </html>
