@@ -520,44 +520,25 @@
   /* ===== 친구 공유 (UI 개선) ===== */
   .share-section {
     text-align: center;
-    padding: 28px 18px 32px !important;
+    padding: 22px 18px 26px !important;
     background: linear-gradient(180deg, #fffef5 0%, #fff8d1 100%) !important;
-    border-top: 3px solid var(--gold) !important;
-    border-bottom: 3px solid var(--gold) !important;
+    border-top: 1.5px solid var(--gold) !important;
+    border-bottom: 1.5px solid var(--gold) !important;
   }
   .share-urgent-tag {
     display: inline-block;
     background: var(--warn-red);
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
-    padding: 5px 14px;
+    padding: 7px 18px;
     border-radius: 999px;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
     animation: pulse-tag 1.6s infinite;
   }
   @keyframes pulse-tag {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.06); }
-  }
-  .share-title-new {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--ink);
-    line-height: 1.3;
-    letter-spacing: -0.025em;
-    margin-bottom: 8px;
-  }
-  .share-title-emph {
-    color: var(--dp-blue);
-    background: linear-gradient(180deg, transparent 65%, var(--gold) 65%);
-    padding: 0 4px;
-  }
-  .share-subtitle {
-    font-size: 15px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    font-weight: 600;
   }
   
   /* MEGA 카카오톡 버튼 */
@@ -575,7 +556,7 @@
     font-family: var(--font-base);
     box-shadow: 0 6px 18px rgba(254,229,0,0.45), 0 0 0 0 rgba(254,229,0,0.7);
     transition: all 0.18s;
-    margin-bottom: 14px;
+    margin-bottom: 0;
     animation: pulse-mega 2.2s infinite;
   }
   @keyframes pulse-mega {
@@ -595,10 +576,10 @@
     text-align: left;
   }
   .share-btn-mega-main {
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
   }
   .share-btn-mega-sub {
     font-size: 14px;
@@ -611,34 +592,6 @@
     font-weight: 900;
     flex-shrink: 0;
   }
-  
-  /* 보조 버튼 (링크복사, 문자) */
-  .share-secondary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .share-mini-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: white;
-    border: 2px solid var(--line);
-    color: var(--ink);
-    padding: 14px 10px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 800;
-    cursor: pointer;
-    font-family: var(--font-base);
-    transition: all 0.15s;
-  }
-  .share-mini-btn:active {
-    transform: scale(0.96);
-    background: var(--cream);
-  }
-  .share-mini-icon { font-size: 18px; }
   
   /* ===== FLOATING SHARE BUTTON (FAB) ===== */
   .share-fab {
@@ -1716,29 +1669,16 @@
 
   <!-- ===== 친구에게 알리기 (카카오톡 공유) ===== -->
   <section class="share-section">
-    <div class="share-urgent-tag">🔥 사전투표 진행 중!</div>
-    <div class="share-title-new">한 명에게라도 더<br><span class="share-title-emph">전북의 미래</span>를 알려주세요</div>
-    <div class="share-subtitle">단 5초면 친구·가족에게 공유 가능합니다</div>
+    <div class="share-urgent-tag">🔥 전북의 미래를 알려주세요</div>
     
     <button class="share-btn-mega" onclick="shareKakao()">
       <span class="share-btn-mega-icon">💬</span>
       <div class="share-btn-mega-text">
-        <div class="share-btn-mega-main">카카오톡으로 공유</div>
+        <div class="share-btn-mega-main">친구에게 카카오톡으로 공유하기</div>
         <div class="share-btn-mega-sub">친구에게 1초 만에 보내기</div>
       </div>
       <span class="share-btn-mega-arrow">→</span>
     </button>
-    
-    <div class="share-secondary">
-      <button class="share-mini-btn" onclick="copyLink()">
-        <span class="share-mini-icon">📋</span>
-        <span>링크 복사</span>
-      </button>
-      <button class="share-mini-btn" onclick="shareSMS()">
-        <span class="share-mini-icon">💌</span>
-        <span>문자로 보내기</span>
-      </button>
-    </div>
   </section>
 
   <!-- ===== ONE TEAM 비교 ===== -->
@@ -1968,30 +1908,6 @@
       alert('카카오톡 공유 기능을 불러오는 중입니다.\n잠시 후 다시 시도해주세요.');
       return;
     }
-  
-  function copyLink() {
-    const url = 'https://1taek.vercel.app/';
-    const okMsg = '✅ 링크가 복사되었습니다!\n친구·가족에게 붙여넣기로 보내주세요.';
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function(){ alert(okMsg); }).catch(function(){
-        var ta = document.createElement('textarea');
-        ta.value = url; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); alert(okMsg); } catch(e) { prompt('아래 링크를 복사하세요:', url); }
-        document.body.removeChild(ta);
-      });
-    } else {
-      var ta = document.createElement('textarea');
-      ta.value = url; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); alert(okMsg); } catch(e) { prompt('아래 링크를 복사하세요:', url); }
-      document.body.removeChild(ta);
-    }
-  }
-  
-  function shareSMS() {
-    var msg = '오로지 전북, 반드시 체감성장!\n민주당 원팀 도지사 이원택을 응원합니다.\n👉 https://1taek.vercel.app/';
-    window.location.href = 'sms:?body=' + encodeURIComponent(msg);
-  }
-
     if (!window.Kakao.isInitialized()) {
       try {
         window.Kakao.init(KAKAO_APP_KEY);
@@ -2004,7 +1920,6 @@
       alert('카카오 공유 기능을 사용할 수 없습니다.');
       return;
     }
-
     try {
       window.Kakao.Share.sendDefault({
         objectType: 'feed',
