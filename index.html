@@ -579,14 +579,46 @@
   }
   .top-notice-sub {
     font-size: 13px;
-    font-weight: 700;
-    opacity: 0.88;
-    margin-top: 1px;
+    font-weight: 800;
+    opacity: 0.85;
+    margin-top: 2px;
   }
   .top-notice-arrow {
     font-size: 22px;
     font-weight: 900;
     flex-shrink: 0;
+  }
+  
+  /* 클릭 명확 표시 CTA */
+  .top-notice-cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--dp-blue);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(21,36,132,0.3);
+    animation: cta-pulse 1.8s infinite;
+    letter-spacing: -0.025em;
+  }
+  @keyframes cta-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 2px 6px rgba(21,36,132,0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 4px 12px rgba(21,36,132,0.5); }
+  }
+  .top-notice-cta-text {
+    letter-spacing: -0.025em;
+  }
+  .top-notice-cta-arrow {
+    font-size: 16px;
+    animation: arrow-bounce 1.2s infinite;
+  }
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(2px); }
   }
   /* ===== 오늘의 유세 일정 (4050 친화) ===== */
   .schedule-section {
@@ -1646,53 +1678,217 @@
     flex-shrink: 0;
     margin-left: 14px;
   }
-
-  /* ===== BIO ===== */
+  /* ===== 후보 약력 타임라인 ===== */
   .bio-section {
-    padding: 30px 24px 28px;
-    background: white;
+    padding: 24px 16px 30px;
+    background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
   }
   .bio-card {
-    background: linear-gradient(180deg, var(--cream) 0%, white 100%);
-    border-radius: 18px;
-    padding: 20px 20px;
-    border: 2px solid var(--dp-blue-line);
+    background: var(--dp-blue);
+    color: white;
+    border-radius: 16px;
+    padding: 20px 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(21,36,132,0.25);
   }
   .bio-header {
     display: flex; align-items: center; gap: 14px;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--dp-blue-line);
   }
   .bio-num {
-    width: 66px; height: 66px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    width: 56px; height: 56px;
+    background: var(--gold);
     color: var(--dp-blue-deep);
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
     font-size: 36px;
     font-weight: 900;
-    line-height: 1;
-    box-shadow: 0 6px 16px rgba(245,184,0,0.3);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
   .bio-text { flex: 1; }
-  .bio-party { font-size: 14px; color: var(--dp-blue); font-weight: 900; }
-  .bio-name { font-size: 28px; font-weight: 900; margin-top: 2px; letter-spacing: -0.03em; }
-  .bio-role { font-size: 15px; color: var(--muted); margin-top: 4px; font-weight: 500; }
-  .bio-list { list-style: none; }
-  .bio-list li {
-    font-size: 20px; color: var(--ink);
-    padding: 9px 0;
-    border-bottom: 1px dashed var(--dp-blue-line);
-    line-height: 1.55;
-    font-weight: 500;
+  .bio-party {
+    font-size: 13px; font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 2px;
   }
-  .bio-list li:last-child { border-bottom: none; }
-  .bio-list li::before {
-    content: '·';
-    color: var(--dp-blue);
-    margin-right: 10px;
+  .bio-name {
+    font-size: 28px; font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .bio-role {
+    font-size: 13px; opacity: 0.9;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  
+  /* 핵심 메시지 박스 */
+  .bio-message {
+    background: white;
+    border: 2.5px solid var(--gold);
+    border-radius: 16px;
+    padding: 20px 18px;
+    margin-bottom: 22px;
+    text-align: center;
+    position: relative;
+  }
+  .bio-message-eyebrow {
+    display: inline-block;
+    background: var(--warn-red);
+    color: white;
+    font-size: 13px;
     font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .bio-message-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+  }
+  .bio-message-sub {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 600;
+  }
+  .bio-message-sub strong {
+    color: var(--dp-blue);
+    font-weight: 900;
+  }
+  
+  /* 타임라인 */
+  .career-timeline {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 12px; bottom: 12px;
+    width: 2.5px;
+    background: var(--dp-blue-soft);
+    border-radius: 2px;
+  }
+  .career-stage {
+    position: relative;
+    padding: 0 0 18px 14px;
+  }
+  .career-stage:last-child { padding-bottom: 0; }
+  .career-bullet {
+    position: absolute;
+    left: -20px; top: 10px;
+    width: 16px; height: 16px;
+    background: var(--dp-blue);
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--dp-blue);
+  }
+  .career-bullet.bullet-gold {
+    background: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .career-body {
+    background: white;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .career-era {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--dp-blue);
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+  .career-period {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .career-items {
+    list-style: none;
+    padding: 0; margin: 0 0 8px 0;
+  }
+  .career-items li {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .career-items li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--dp-blue);
+    font-weight: 900;
+  }
+  .career-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 6px 10px;
+    background: var(--cream);
+    border-radius: 6px;
+    margin-top: 6px;
+  }
+  .career-note-emph {
+    background: linear-gradient(180deg, #fffbe5 0%, #fff3a3 100%);
+    color: var(--ink);
+    font-weight: 700;
+    border-left: 3px solid var(--gold);
+  }
+  
+  /* 마무리 강조 박스 */
+  .bio-final {
+    display: flex;
+    gap: 14px;
+    background: linear-gradient(135deg, var(--dp-blue) 0%, var(--dp-blue-deep) 100%);
+    color: white;
+    padding: 20px 18px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(21,36,132,0.3);
+  }
+  .bio-final-icon {
+    font-size: 40px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .bio-final-text {
+    flex: 1;
+    font-size: 13.5px;
+    line-height: 1.55;
+    font-weight: 600;
+  }
+  .bio-final-text strong {
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 15.5px;
+    letter-spacing: -0.02em;
+  }
+  .gold-emph {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dp-blue-deep);
+    font-weight: 900;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
   }
 
   /* ===== FOOTER ===== */
@@ -1730,13 +1926,16 @@
 
   <!-- ===== HERO (메인 포스터) ===== -->
     <!-- ===== STICKY 상단 안내 ===== -->
-  <a href="#todaySchedule" class="top-notice">
-    <div class="top-notice-icon">📅</div>
+  <a href="#bio" class="top-notice">
+    <div class="top-notice-icon">🌾</div>
     <div class="top-notice-text">
-      <div class="top-notice-title">이원택 후보 오늘의 일정 바로보기</div>
-      <div class="top-notice-sub">아래로 내려보세요</div>
+      <div class="top-notice-title">민주당, 한길만 걸어온 이원택은?</div>
+      <div class="top-notice-sub">👇 여기를 눌러주세요</div>
     </div>
-    <div class="top-notice-arrow">↓</div>
+    <div class="top-notice-cta">
+      <span class="top-notice-cta-text">보러가기</span>
+      <span class="top-notice-cta-arrow">↓</span>
+    </div>
   </a>
 
   <section class="hero">
@@ -1772,16 +1971,16 @@
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 본 2: 다음·아이뉴스24 - 연금도시 HOT -->
-      <a href="https://v.daum.net/v/20260320123900246" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-press">📰</div>
+      <!-- 본 2: KBS - 무소속 출마는 공천 불복 (HOT) -->
+      <a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8574165&ref=A" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon news-icon-press">📺</div>
         <div class="news-item-body">
           <div class="news-meta">
-            <span class="news-source">다음 · 아이뉴스24</span>
+            <span class="news-source">KBS 뉴스</span>
             <span class="news-hot">🔥 HOT</span>
           </div>
-          <div class="news-item-title">이원택 의원 "가구당 최대 1천만원 연금도시 만들겠다"</div>
-          <div class="news-comments news-comments-press">📰 기사 바로가기</div>
+          <div class="news-item-title">"무소속 출마는 공천 불복이자 중대한 해당 행위, 복당 불가"</div>
+          <div class="news-comments news-comments-press">📰 KBS 기사 바로가기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
@@ -1815,6 +2014,16 @@
         </div>
         <div class="news-arrow">→</div>
       </a>
+      <!-- 서브: 쿠키뉴스 - 전북에 살면 연 1천만원 (NEW) -->
+      <a href="https://www.kukinews.com/article/view/kuk202605300008" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+        <div class="news-item-icon news-icon-press">📰</div>
+        <div class="news-item-body">
+          <div class="news-source">쿠키뉴스</div>
+          <div class="news-item-title">이원택 "전북에 살면 연 1천만원 드립니다"</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
 
       <!-- 서브 4: 더팩트 군산 전북성장공사 -->
       <a href="https://v.daum.net/v/20260525232954031" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
@@ -2046,18 +2255,6 @@
           <div class="schedule-addr">📍 남원시 선거연락소</div>
         </div>
       </div>
-
-      <!-- 4. 14:15 인터뷰 -->
-      <div class="schedule-card sc-private">
-        <div class="schedule-row-top">
-          <div class="schedule-time-badge">14:15</div>
-          <span class="schedule-type-tag tag-interview">🎤 전화인터뷰 · 서울</span>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-place">뉴스토마토 「뉴스인사이다」 인터뷰</div>
-        </div>
-      </div>
-
       <!-- 5. 14:40 임실 회의 -->
       <div class="schedule-card sc-private">
         <div class="schedule-row-top">
@@ -2127,7 +2324,8 @@
   </section>
 
   <!-- ===== 후보 약력 ===== -->
-  <section class="bio-section">
+  <section class="bio-section" id="bio">
+    <!-- 후보 헤더 -->
     <div class="bio-card">
       <div class="bio-header">
         <div class="bio-num">1</div>
@@ -2137,16 +2335,104 @@
           <div class="bio-role">전북도지사 후보 · 1970년생 · 김제 출생</div>
         </div>
       </div>
-      <ul class="bio-list">
-        <li>전)제21대·22대 국회의원 (군산·김제·부안을)</li>
-        <li>전)전라북도 정무부지사</li>
-        <li>전)대통령비서실 행정관</li>
-        <li>전)더불어민주당 전북특별자치도당 위원장</li>
-        <li>전)더불어민주당 전국농어민위원장</li>
-        <li>전)제22대 농림축산식품해양수산위원회 간사</li>
-        <li>전)제20대 대선 캠프 종합상황실 수석부실장</li>
-        <li>전북대학교 화학공학과 졸업</li>
-      </ul>
+    </div>
+
+    <!-- 핵심 메시지 (간결) -->
+    <div class="bio-message">
+      <div class="bio-message-eyebrow">철새 정치 아닙니다</div>
+      <div class="bio-message-title">2005년부터 지금까지<br><span class="blue">전북 · 민주당 한길</span></div>
+    </div>
+
+    <!-- 타임라인 -->
+    <div class="career-timeline">
+
+      <div class="career-stage stage-1">
+        <div class="career-bullet"></div>
+        <div class="career-body">
+          <div class="career-era">🌱 시민운동·정치 입문</div>
+          <div class="career-period">2005년 · 노무현 정부</div>
+          <ul class="career-items">
+            <li>시민행동21 사무처장</li>
+            <li>열린우리당 전북도당 청년2국장</li>
+          </ul>
+          <div class="career-note">대학 졸업 후 시민운동을 통해 정치 입문</div>
+        </div>
+      </div>
+
+      <div class="career-stage stage-2">
+        <div class="career-bullet"></div>
+        <div class="career-body">
+          <div class="career-era">🏛️ 전주시의원 (초선)</div>
+          <div class="career-period">2006.7 ~ 2008.12 · 민선 4기</div>
+          <ul class="career-items">
+            <li>전라북도 전주시의회 의원 (라선거구, 초선)</li>
+          </ul>
+          <div class="career-note">지역에서 풀뿌리 정치 시작</div>
+        </div>
+      </div>
+
+      <div class="career-stage stage-3">
+        <div class="career-bullet"></div>
+        <div class="career-body">
+          <div class="career-era">🤝 지역 행정의 핵심</div>
+          <div class="career-period">2008.12 ~ 2017.8 · 9년</div>
+          <ul class="career-items">
+            <li>전주시장 비서실장 (5년)</li>
+            <li>전라북도지사 비서실장</li>
+            <li>전라북도청 대외협력국장 (개방형 3급)</li>
+          </ul>
+          <div class="career-note">시장·도지사 비서실장으로 지역 행정 9년 경험</div>
+        </div>
+      </div>
+
+      <div class="career-stage stage-4">
+        <div class="career-bullet"></div>
+        <div class="career-body">
+          <div class="career-era">🇰🇷 청와대 행정관</div>
+          <div class="career-period">2017.8 ~ 2019.2 · 문재인 정부</div>
+          <ul class="career-items">
+            <li>대통령비서실 균형발전비서관실 행정관</li>
+            <li>대통령비서실 자치발전비서관실 행정관</li>
+          </ul>
+          <div class="career-note career-note-emph">💡 새만금국제공항 예타면제, 새만금 클러스터 사업을 청와대에서 직접 챙김</div>
+        </div>
+      </div>
+
+      <div class="career-stage stage-5">
+        <div class="career-bullet"></div>
+        <div class="career-body">
+          <div class="career-era">🌾 전라북도 정무부지사</div>
+          <div class="career-period">2019.2 ~ 2019.9 · 지역 복귀</div>
+          <ul class="career-items">
+            <li>전라북도 정무부지사</li>
+            <li>더불어민주당 전북도당 정책위원장</li>
+          </ul>
+          <div class="career-note">중앙 행정 경험을 전북에 가져옴</div>
+        </div>
+      </div>
+
+      <div class="career-stage stage-6">
+        <div class="career-bullet bullet-gold"></div>
+        <div class="career-body">
+          <div class="career-era">🗳️ 국회의원 (재선)</div>
+          <div class="career-period">2020 ~ 현재 · 김제·부안</div>
+          <ul class="career-items">
+            <li>제21대 국회의원 (김제·부안, 초선)</li>
+            <li>제22대 국회의원 (김제·부안, 재선)</li>
+          </ul>
+          <div class="career-note">김제·부안 도민의 선택을 받아 2회 연속 당선</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 마무리 메시지 -->
+    <div class="bio-final">
+      <div class="bio-final-icon">🌾</div>
+      <div class="bio-final-text">
+        <strong>2005년부터 2026년까지,<br>21년간 오직 전북·민주당.</strong>
+        <span class="gold-emph">전북에서 성장한 진짜 전북 사람,<br>이원택이 전북특별자치도지사 후보입니다.</span>
+      </div>
     </div>
   </section>
 
