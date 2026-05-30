@@ -518,6 +518,74 @@
 
 
 
+
+  /* ===== 방송연설 ===== */
+  .speech-section {
+    padding: 18px 18px 20px;
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .speech-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--ink);
+    margin: 0 0 4px 0;
+    letter-spacing: -0.02em;
+  }
+  .speech-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 12px 0;
+  }
+  .speech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .speech-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: white;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .speech-item:active {
+    transform: scale(0.98);
+    background: var(--cream);
+  }
+  .speech-item-play {
+    width: 32px; height: 32px;
+    background: #ff0000;
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .speech-item-text { flex: 1; min-width: 0; }
+  .speech-item-source {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--dp-blue);
+    letter-spacing: -0.02em;
+  }
+  .speech-item-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 2px;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
   /* ===== 친구 공유 (UI 개선) ===== */
   .share-section {
     text-align: center;
@@ -1580,21 +1648,21 @@
     <span class="section-tag">📰 전북선거 주요 뉴스</span>
 
     <div class="news-list">
-      <!-- 큰 1: 세계일보 - 조승래 "거짓말 밥 먹듯" (HOT, NEW) -->
-      <a href="https://n.news.naver.com/mnews/article/022/0004131636?sid=162" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-naver">N</div>
+      <!-- 본 1: 다음·아이뉴스24 - 연금도시 HOT -->
+      <a href="https://v.daum.net/v/20260320123900246" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
           <div class="news-meta">
-            <span class="news-source">네이버 · 세계일보</span>
+            <span class="news-source">다음 · 아이뉴스24</span>
             <span class="news-hot">🔥 HOT</span>
           </div>
-          <div class="news-item-title">與 조승래, 김관영에 "거짓말 밥 먹듯 해" [6·3의 선택]</div>
-          <div class="news-comments news-comments-naver">💬 네이버 댓글 달기</div>
+          <div class="news-item-title">이원택 의원 "가구당 최대 1천만원 연금도시 만들겠다"</div>
+          <div class="news-comments news-comments-press">📰 기사 바로가기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 큰 2: 이데일리 여론조사 (HOT) -->
+      <!-- 본 2: 이데일리 여론조사 HOT (3번째에서 올림) -->
       <a href="https://n.news.naver.com/article/018/0006292435" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-poll">📊</div>
         <div class="news-item-body">
@@ -1608,31 +1676,27 @@
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 큰 3: KBS - 조승래 "당선돼도 재선거" (HOT, NEW) -->
-      <a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8573451&ref=A" target="_blank" rel="noopener noreferrer" class="news-item">
+      <!-- 서브 1: 세계일보 조승래 (HOT 제거) -->
+      <a href="https://n.news.naver.com/mnews/article/022/0004131636?sid=162" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+        <div class="news-item-icon news-icon-naver">N</div>
+        <div class="news-item-body">
+          <div class="news-source">네이버 · 세계일보</div>
+          <div class="news-item-title">與 조승래, 김관영에 "거짓말 밥 먹듯 해" [6·3의 선택]</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <!-- 서브 2: KBS 조승래 (HOT 제거) -->
+      <a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8573451&ref=A" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-press">📺</div>
         <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">KBS 뉴스</span>
-            <span class="news-hot">🔥 HOT</span>
-          </div>
+          <div class="news-source">KBS 뉴스</div>
           <div class="news-item-title">민주 조승래 "김관영 당선돼도 재선거"…사전투표 첫날에도 맹공</div>
-          <div class="news-comments news-comments-press">📰 KBS 기사 바로가기</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 작은 1: YouTube LIVE -->
-      <a href="https://www.youtube.com/live/7u2IvFxgOXQ" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-youtube">▶</div>
-        <div class="news-item-body">
-          <div class="news-source">유튜브 · 공식 새날 LIVE</div>
-          <div class="news-item-title">전북 이원택 46% 김관영 38% 뒤집힌 이유</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 작은 2: SBS 청와대 -->
+      <!-- 서브 3: SBS 청와대 -->
       <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008582388&plink=ORI&cooper=NAVER" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-sbs">📺</div>
         <div class="news-item-body">
@@ -1642,7 +1706,7 @@
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 작은 3: 더팩트 군산 전북성장공사 -->
+      <!-- 서브 4: 더팩트 군산 전북성장공사 -->
       <a href="https://v.daum.net/v/20260525232954031" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
@@ -1650,6 +1714,34 @@
           <div class="news-item-title">이원택 "군산에 '전북성장공사' 설립…새만금-군산 미래산업 핵심거점"</div>
         </div>
         <div class="news-arrow">→</div>
+      </a>
+    </div>
+  </section>
+  <!-- ===== 방송연설 ===== -->
+  <section class="speech-section">
+    <h2 class="speech-title">📺 방송연설 보기</h2>
+    <p class="speech-sub">이원택 후보의 공식 방송연설</p>
+    <div class="speech-list">
+      <a href="https://www.youtube.com/watch?v=rLKY4EaeswE" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">JTV뉴스</div>
+          <div class="speech-item-title">제9회 지방선거 방송연설 (5/27)</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=j8OCEnrsU24" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">전주MBC</div>
+          <div class="speech-item-title">전북도지사 후보자 방송연설 (5/29)</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=R0OR8O0SoQo" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">KBS 전북</div>
+          <div class="speech-item-title">전북도지사 후보 연설 (5/26)</div>
+        </div>
       </a>
     </div>
   </section>
@@ -2162,12 +2254,12 @@
   const ageData = {
     '청년': {
       icon: '🌱', sub: '청년 미래', color: '#0072e3',
-      label: '청년에게 더 많은 기회를 약속합니다',
+      label: '청년이 머무는 힘있는 전북',
       pledges: [
-        '청년창업·창직 지원 강화',
-        '전북형 청년 일자리 지원',
-        '청년 주거지원 확대 (대출이자·임차료)',
-        '청년 문화 향유 패스 지원'
+        '1천원 청년주택 공급',
+        '1천만원 예식비용 지원',
+        '중소기업 청년 복지카드 도입',
+        '대학생 생성형 AI 구독료 지원'
       ]
     },
     '여성·가족': {
