@@ -462,79 +462,59 @@
 
   /* ===== 페이스북 섹션 ===== */
   .fb-section {
-    padding: 16px 18px 18px;
+    padding: 12px 18px 14px;
     background: white;
     border-top: 1px solid var(--line);
   }
   .fb-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 900;
     color: var(--ink);
-    margin: 0 0 12px 0;
+    margin: 0 0 8px 0;
     letter-spacing: -0.025em;
   }
   
-  /* 페이스북 큰 카드 */
+  /* 페이스북 컴팩트 카드 */
   .fb-big-card {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     background: linear-gradient(135deg, #1877F2 0%, #0d5dbd 100%);
-    border-radius: 14px;
-    padding: 16px 18px;
+    border-radius: 10px;
+    padding: 10px 14px;
     text-decoration: none;
     color: white;
-    box-shadow: 0 4px 14px rgba(24,119,242,0.3);
+    box-shadow: 0 3px 10px rgba(24,119,242,0.25);
     transition: transform 0.15s;
   }
   .fb-big-card:active {
     transform: scale(0.98);
   }
-  .fb-big-card-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
   .fb-big-card-icon {
-    width: 48px; height: 48px;
+    width: 32px; height: 32px;
     background: white;
     color: #1877F2;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;
     font-family: Georgia, serif;
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
-  .fb-big-card-info {
-    flex: 1; min-width: 0;
-  }
-  .fb-big-card-name {
-    font-size: 18px;
+  .fb-big-card-text {
+    flex: 1;
+    font-size: 15px;
     font-weight: 900;
     letter-spacing: -0.025em;
-  }
-  .fb-big-card-meta {
-    font-size: 13px;
-    opacity: 0.9;
-    margin-top: 2px;
-    font-weight: 700;
-  }
-  .fb-big-card-cta {
-    background: rgba(255,255,255,0.18);
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: -0.025em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    line-height: 1.3;
   }
   .fb-big-card-arrow {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
+    opacity: 0.9;
+    flex-shrink: 0;
   }
+
 
   /* ===== 방송연설 ===== */
   .speech-section {
@@ -2134,17 +2114,9 @@
     <h2 class="fb-title">📘 이원택 페이스북</h2>
     
     <a href="https://www.facebook.com/share/p/1Vw6KaAFpt/" target="_blank" rel="noopener noreferrer" class="fb-big-card">
-      <div class="fb-big-card-top">
-        <div class="fb-big-card-icon">f</div>
-        <div class="fb-big-card-info">
-          <div class="fb-big-card-name">이원택</div>
-          <div class="fb-big-card-meta">민주당 원팀 도지사 후보 · 게시글</div>
-        </div>
-      </div>
-      <div class="fb-big-card-cta">
-        📘 페이스북에서 보러가기
-        <span class="fb-big-card-arrow">→</span>
-      </div>
+      <div class="fb-big-card-icon">f</div>
+      <div class="fb-big-card-text">이원택 후보 소식 보고 응원해주기!</div>
+      <div class="fb-big-card-arrow">→</div>
     </a>
   </section>
 
