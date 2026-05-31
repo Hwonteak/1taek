@@ -839,6 +839,32 @@
   }
 
 
+
+  /* ===== 메가시티 메인 카드 강조 ===== */
+  .news-item-mega {
+    border: 2.5px solid var(--gold) !important;
+    background: linear-gradient(135deg, #fffbe8 0%, #ffffff 50%) !important;
+    box-shadow: 0 4px 16px rgba(232,180,18,0.25) !important;
+  }
+  .news-item-mega .news-item-title {
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    line-height: 1.4 !important;
+    color: var(--ink) !important;
+  }
+  .news-item-mega .news-source {
+    color: var(--dp-blue) !important;
+    font-weight: 900 !important;
+  }
+  .news-item-mega .news-hot {
+    background: var(--warn-red) !important;
+    color: white !important;
+    font-size: 13px !important;
+    padding: 4px 10px !important;
+    box-shadow: 0 2px 6px rgba(217,40,40,0.3) !important;
+  }
+
+
   /* ===== 친구 공유 (UI 개선) ===== */
   .share-section {
     text-align: center;
@@ -1124,7 +1150,7 @@
     font-weight: 700;
   }
   .news-item-compact .news-item-title {
-    font-size: 17px !important;
+    font-size: 14.5px !important;
     line-height: 1.4 !important;
     font-weight: 800 !important;
   }
@@ -1150,7 +1176,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 16px;
+    padding: 16px 16px;
     background: white;
     border: 2px solid var(--dp-blue-line);
     border-radius: 14px;
@@ -2028,18 +2054,20 @@
     <span class="section-tag">📰 전북선거 주요 뉴스</span>
 
     <div class="news-list">
-
-      <!-- 본 2: 뉴시스 - 호남·제주 초광역 메가시티 (HOT) -->
-      <a href="https://www.newsis.com/view/NISX20260531_0003650855" target="_blank" rel="noopener noreferrer" class="news-item"><div class="news-item-icon news-icon-press">📰</div><div class="news-item-body"><div class="news-meta">
+      <!-- ★ 본 1: 뉴시스 - 메가시티 (MAIN HOT) -->
+      <a href="https://www.newsis.com/view/NISX20260531_0003650855" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
+        <div class="news-item-icon news-icon-press">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
             <span class="news-source">뉴시스</span>
             <span class="news-hot">🔥 HOT</span>
           </div>
-          <div class="news-item-title">이원택·민형배·위성곤 "호남·제주 초광역 메가시티 한뜻"</div>
+          <div class="news-item-title">이원택·민형배·위성곤<br>"호남·제주 초광역 메가시티 한뜻"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 본 2: 유튜브 - 호남과 제주 공동선언문 -->
+      <!-- 본 2: 유튜브 공동선언문 -->
       <a href="https://www.youtube.com/watch?v=9Ogx6EgHsTc" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-youtube">▶</div>
         <div class="news-item-body">
@@ -2050,53 +2078,43 @@
         </div>
         <div class="news-arrow">→</div>
       </a>
-      <!-- 본 3: 연합뉴스 - 한국갤럽 마지막 공식 여론조사 HOT -->
-      <a href="https://www.yna.co.kr/view/AKR20260528141100001?input=1195m" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-poll">📊</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">연합뉴스 · 한국갤럽</span>
-          </div>
-          <div class="news-item-title">이원택 46%·김관영 38% 오차범위 벗어난 우세</div>
-          <div class="news-poll-note">📌 투표 전 마지막 공식 여론조사 (한국갤럽)</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
 
-      <!-- 본 3: MBN 정치 -->
-      <a href="https://www.mbn.co.kr/news/politics/5196970" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-press">📺</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">MBN 뉴스</span>
-          </div>
-          <div class="news-item-title">이원택 후보 관련 MBN 정치 뉴스</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 본 4: 전라일보 - 서영교 새만금 9조 (HOT) -->
+      <!-- 본 3: 전라일보 - 새만금 9조 (메가시티 핵심 동력) -->
       <a href="https://www.jeollailbo.com/news/articleView.html?idxno=801484" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
           <div class="news-meta">
             <span class="news-source">전라일보</span>
           </div>
-          <div class="news-item-title">서영교 "현대차 새만금 9조 투자, 국회가 뒷받침" 이원택 총력 지원</div>
+          <div class="news-item-title">서영교 "현대차 새만금 9조 투자,<br>국회가 뒷받침"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
 
-      <!-- 서브 3: SBS 청와대 -->
-      <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008582388&plink=ORI&cooper=NAVER" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-sbs">📺</div>
+      <!-- 본 4: 한국갤럽 여론조사 -->
+      <a href="https://www.yna.co.kr/view/AKR20260528141100001?input=1195m" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon news-icon-poll">📊</div>
         <div class="news-item-body">
-          <div class="news-source">SBS 뉴스</div>
-          <div class="news-item-title">청와대 "통화한적 없어"·"후보 사퇴해야" vs "아전인수"</div>
+          <div class="news-meta">
+            <span class="news-source">연합뉴스 · 한국갤럽</span>
+          </div>
+          <div class="news-item-title">이원택 46%·김관영 38%<br>오차범위 벗어난 우세</div>
+          <div class="news-poll-note">📌 투표 전 마지막 공식 여론조사</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
-      <!-- 서브: 쿠키뉴스 - 전북에 살면 연 1천만원 (NEW) -->
+
+      <!-- 서브 5: 더팩트 - 군산 전북성장공사 (메가시티 새만금 거점) -->
+      <a href="https://v.daum.net/v/20260525232954031" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+        <div class="news-item-icon news-icon-press">📰</div>
+        <div class="news-item-body">
+          <div class="news-source">더팩트</div>
+          <div class="news-item-title">군산 '전북성장공사' 설립…새만금-군산 미래산업 핵심거점</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <!-- 서브 6: 쿠키뉴스 - 전북 1천만원 정책 -->
       <a href="https://www.kukinews.com/article/view/kuk202605300008" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
@@ -2106,13 +2124,12 @@
         <div class="news-arrow">→</div>
       </a>
 
-
-      <!-- 서브 4: 더팩트 군산 전북성장공사 -->
-      <a href="https://v.daum.net/v/20260525232954031" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-press">📰</div>
+      <!-- 서브 7: SBS - 청와대 통화 논란 -->
+      <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008582388&plink=ORI&cooper=NAVER" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+        <div class="news-item-icon news-icon-press">📺</div>
         <div class="news-item-body">
-          <div class="news-source">다음 · 더팩트</div>
-          <div class="news-item-title">이원택 "군산에 '전북성장공사' 설립…새만금-군산 미래산업 핵심거점"</div>
+          <div class="news-source">SBS 뉴스</div>
+          <div class="news-item-title">청와대 "통화한적 없어"·"후보 사퇴해야" vs "아전인수"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
