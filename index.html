@@ -1853,6 +1853,25 @@
     border-left: 3px solid var(--gold);
   }
   
+
+  /* 감성 카피 (정치 카피라이터 스타일) */
+  .career-copy {
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(255,216,61,0.12) 0%, rgba(21,36,132,0.06) 100%);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dp-blue);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    font-style: normal;
+  }
+  .career-copy::before {
+    display: none;
+  }
+
   /* 마무리 강조 박스 */
   .bio-final {
     display: flex;
@@ -1979,6 +1998,19 @@
             <span class="news-hot">🔥 HOT</span>
           </div>
           <div class="news-item-title">與 조승래, "출마는 공천 불복이자 중대한 해당 행위, 영구복당 불허"</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <!-- 본 3: 연합뉴스 - 국힘 지지층 저지·민주당 총집결 (HOT) -->
+      <a href="https://n.news.naver.com/mnews/article/001/0016109921?sid=100" target="_blank" rel="noopener noreferrer" class="news-item">
+        <div class="news-item-icon news-icon-naver">N</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">네이버 · 연합뉴스</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">이원택 "국힘 지지층 이동 저지…민주당으로 총집결해야"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
@@ -2340,6 +2372,7 @@
             <li>시민행동21 사무처장</li>
             <li>열린우리당 전북도당 청년2국장</li>
           </ul>
+          <div class="career-copy">"거리에서 정치로,<br>노무현의 정신을 이어받다"</div>
         </div>
       </div>
 
@@ -2351,6 +2384,7 @@
           <ul class="career-items">
             <li>전라북도 전주시의회 의원 (라선거구, 초선)</li>
           </ul>
+          <div class="career-copy">"가장 낮은 자리에서,<br>도민의 곁으로"</div>
         </div>
       </div>
 
@@ -2364,6 +2398,7 @@
             <li>전라북도지사 비서실장</li>
             <li>전라북도청 대외협력국장 (개방형 3급)</li>
           </ul>
+          <div class="career-copy">"전북의 곳간을 지킨<br>9년의 묵묵한 손길"</div>
         </div>
       </div>
 
@@ -2376,6 +2411,7 @@
             <li>대통령비서실 균형발전비서관실 행정관</li>
             <li>대통령비서실 자치발전비서관실 행정관</li>
           </ul>
+          <div class="career-copy">"새만금을 지킨<br>청와대의 단 한 사람"</div>
         </div>
       </div>
 
@@ -2388,6 +2424,7 @@
             <li>전라북도 정무부지사</li>
             <li>더불어민주당 전북도당 정책위원장</li>
           </ul>
+          <div class="career-copy">"다시 고향 전북으로,<br>중앙의 힘을 보태다"</div>
         </div>
       </div>
 
@@ -2400,6 +2437,7 @@
             <li>제21대 국회의원 (김제·부안, 초선)</li>
             <li>제22대 국회의원 (김제·부안, 재선)</li>
           </ul>
+          <div class="career-copy">"도민이 두 번 선택한 신뢰,<br>한길의 증명"</div>
         </div>
       </div>
 
