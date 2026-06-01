@@ -119,6 +119,116 @@
     height: auto;
   }
 
+  /* ===== Hero 영상 + 호소 메시지 ===== */
+  .hero-video-section {
+    background: linear-gradient(180deg, #0a0e2e 0%, var(--dp-blue-deep) 60%, var(--dp-blue) 100%);
+    padding: 20px 16px 28px;
+  }
+  
+  /* 영상 (세로 쇼츠 9:16) */
+  .hero-video-wrap {
+    max-width: 340px;
+    margin: 0 auto 22px;
+  }
+  .hero-video {
+    position: relative;
+    padding-bottom: 177.78%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.5),
+                0 0 0 3px var(--gold),
+                0 0 30px rgba(232,180,18,0.4);
+  }
+  .hero-video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+
+  /* ===== 이원택 호소문 (깔끔 미니멀) ===== */
+  .hero-appeal {
+    background: white;
+    color: var(--ink);
+    margin: 0 auto;
+    max-width: 480px;
+    padding: 22px 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  
+  /* 호소문 라벨 */
+  .hero-appeal-label {
+    display: inline-block;
+    background: var(--dp-blue);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  
+  /* 경고 라인 */
+  .appeal-warning {
+    margin: 0 0 18px 0;
+    padding: 10px 12px;
+    background: #fff4f4;
+    border-left: 4px solid var(--warn-red);
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .appeal-warning strong {
+    color: var(--warn-red);
+    font-weight: 900;
+  }
+  
+  /* 본문 라인 */
+  .appeal-text {
+    margin: 0 0 16px 0;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .appeal-text strong {
+    color: var(--dp-blue);
+    font-weight: 900;
+    font-size: 16.5px;
+  }
+  
+  /* 개인적 다짐 */
+  .appeal-personal {
+    margin: 18px 0 0 0;
+    padding-top: 16px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .appeal-personal strong {
+    color: var(--dp-blue-deep);
+    font-weight: 900;
+    font-size: 16.5px;
+  }
+
+  /* 호소 메시지 (구) */
+  
+  /* 약속 박스 */
+
+
   /* ===== ONE TEAM 비교 ===== */
   .oneteam-section {
     padding: 30px 24px 28px;
@@ -2179,8 +2289,40 @@
       </div>
       <div class="election-tag">제9회 지방선거</div>
     </div>
-    <div class="hero-poster">
-      <img src="/images/hero.jpg?v=263776" alt="오로지 전북, 반드시 체감 성장 - 민주당 원팀 도지사 이원택" class="hero-img">
+    
+    <!-- 유튜브 쇼츠 호소 영상 -->
+    <div class="hero-video-section">
+      <div class="hero-video-wrap">
+        <div class="hero-video">
+          <iframe src="https://www.youtube.com/embed/OXXPcdTGQBM" 
+            title="이원택 후보 호소 영상" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- 이원택 호소문 -->
+      <div class="hero-appeal">
+        <div class="hero-appeal-label">📢 이원택 호소문</div>
+        
+        <p class="appeal-warning">⚠️ 무소속 후보는 <strong>절대 민주당 사람이 아닙니다.</strong></p>
+        
+        <p class="appeal-text">
+          이원택을 택하면<br>
+          <strong>이재명 대통령에게 힘이 실립니다.</strong>
+        </p>
+        
+        <p class="appeal-text">
+          힘이 실린 대통령은<br>
+          <strong>더 많은 기회를 전북에 줄 수 있습니다.</strong>
+        </p>
+        
+        <p class="appeal-personal">
+          저 이원택,<br>
+          <strong>오로지 민주당으로 살아왔습니다.</strong>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -2280,35 +2422,6 @@
       <div class="fb-big-card-text">이원택 후보 소식 보고 응원해주기!</div>
       <div class="fb-big-card-arrow">→</div>
     </a>
-  </section>
-
-  <!-- ===== 방송연설 ===== -->
-  <section class="speech-section">
-    <h2 class="speech-title">📺 방송연설 보기</h2>
-    
-    <div class="speech-list">
-      <a href="https://www.youtube.com/watch?v=rLKY4EaeswE" target="_blank" rel="noopener noreferrer" class="speech-item">
-        <span class="speech-item-play">▶</span>
-        <div class="speech-item-text">
-          <div class="speech-item-source">JTV뉴스</div>
-          <div class="speech-item-title">제9회 지방선거 방송연설 (5/27)</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=j8OCEnrsU24" target="_blank" rel="noopener noreferrer" class="speech-item">
-        <span class="speech-item-play">▶</span>
-        <div class="speech-item-text">
-          <div class="speech-item-source">전주MBC</div>
-          <div class="speech-item-title">전북도지사 후보자 방송연설 (5/29)</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=R0OR8O0SoQo" target="_blank" rel="noopener noreferrer" class="speech-item">
-        <span class="speech-item-play">▶</span>
-        <div class="speech-item-text">
-          <div class="speech-item-source">KBS 전북</div>
-          <div class="speech-item-title">전북도지사 후보 연설 (5/26)</div>
-        </div>
-      </a>
-    </div>
   </section>
 
   <section class="picker-section alt">
@@ -2465,78 +2578,96 @@
   <section class="schedule-section" id="todaySchedule">
     <div class="schedule-header">
       <span class="section-tag gold">현장 브리핑</span>
-      <span class="schedule-dday">D-02</span>
+      <span class="schedule-dday">D-01</span>
     </div>
-    <p class="schedule-date">📅 <strong>6월 1일 (월)</strong> · 오늘도 도민을 위해 현장에서!</p>
+    <p class="schedule-date">📅 <strong>6월 2일 (화)</strong> · 선거 전날, 마지막 결의의 날!</p>
 
     <div class="schedule-list">
-      <!-- 1. 03:30 농수산물도매시장 -->
+      <!-- 1. 05:30 환경미화원 차고지 -->
       <div class="schedule-card sc-visit">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">03:30</div>
+          <div class="schedule-time-badge">05:30</div>
           <span class="schedule-type-tag tag-visit">🌃 새벽방문 · 전주</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">전주시 농수산물도매시장 방문</div>
-          <div class="schedule-addr">📍 전주시 농수산물도매시장</div>
+          <div class="schedule-place">아침을 여는 전주시 환경미화원 차고지 방문</div>
+          <div class="schedule-addr">📍 사람과환경</div>
           <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/전주시 농수산물도매시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/전주시%20농수산물도매시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+            <a href="https://map.kakao.com/link/search/전주 사람과환경" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주%20사람과환경" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
           </div>
         </div>
       </div>
 
-      <!-- 2. 07:30 종합경기장 아침인사 -->
-      <div class="schedule-card sc-stump">
+      <!-- 2. 06:00 소각자원센터 -->
+      <div class="schedule-card sc-visit">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">07:30</div>
-          <span class="schedule-type-tag tag-morning">🌅 아침인사 · 전주</span>
+          <div class="schedule-time-badge">06:00</div>
+          <span class="schedule-type-tag tag-visit">🏭 방문 · 전주</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">전주 종합경기장 사거리 인사</div>
-          <div class="schedule-addr">📍 잔칫날한복미인 전주점</div>
+          <div class="schedule-place">전주권 소각자원센터 방문</div>
+          <div class="schedule-addr">📍 전주권 소각자원센터</div>
           <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/잔칫날한복미인 전주점" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/잔칫날한복미인%20전주점" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+            <a href="https://map.kakao.com/link/search/전주권 소각자원센터" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주권%20소각자원센터" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
           </div>
         </div>
       </div>
 
-      <!-- 3. 08:30 전북대 구정문 -->
-      <div class="schedule-card sc-stump">
-        <div class="schedule-row-top">
-          <div class="schedule-time-badge">08:30</div>
-          <span class="schedule-type-tag tag-morning">🌅 아침인사 · 전주</span>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-place">전북대학교 구정문 인사</div>
-          <div class="schedule-addr">📍 전북대학교 구정문</div>
-          <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/전북대학교 구정문" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/전북대학교%20구정문" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. 09:40 전화인터뷰 -->
+      <!-- 3. 07:30 MBC 라디오 인터뷰 -->
       <div class="schedule-card sc-private">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">09:40</div>
-          <span class="schedule-type-tag tag-interview">🎤 전화인터뷰</span>
+          <div class="schedule-time-badge">07:30</div>
+          <span class="schedule-type-tag tag-interview">🎤 전화인터뷰 · 서울</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">오마이TV 「박정호의 핫스팟」 전화인터뷰</div>
+          <div class="schedule-place">MBC 라디오 「김종배의 시선집중」</div>
         </div>
       </div>
 
-      <!-- 5. 10:30 기자회견 (강조) -->
+      <!-- 4. 07:50 시외+고속버스터미널 -->
+      <div class="schedule-card sc-stump">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">07:50</div>
+          <span class="schedule-type-tag tag-morning">🌅 아침인사 · 전주</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">전주시외+고속버스 터미널 인사</div>
+          <div class="schedule-detail">택시승강장 및 승객 인사</div>
+          <div class="schedule-addr">📍 전주시외버스터미널</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/전주시외버스터미널" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주시외버스터미널" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. 08:50 전주역 -->
+      <div class="schedule-card sc-stump">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">08:50</div>
+          <span class="schedule-type-tag tag-morning">🌅 아침인사 · 전주</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">전주역 인사</div>
+          <div class="schedule-detail">택시승강장 및 승객 인사</div>
+          <div class="schedule-addr">📍 전주역</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/전주역" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주역" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 09:50 기자회견 (강조) -->
       <div class="schedule-card sc-highlight">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">10:30</div>
+          <div class="schedule-time-badge">09:50</div>
           <span class="schedule-type-tag tag-treaty">📰 기자회견 · 전주</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">기자회견</div>
+          <div class="schedule-place">더불어민주당 전북도당<br>선거대책위원회 기자회견</div>
           <div class="schedule-addr">📍 전북도의회 브리핑룸</div>
           <div class="schedule-map-row">
             <a href="https://map.kakao.com/link/search/전북도의회" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
@@ -2545,99 +2676,121 @@
         </div>
       </div>
 
-      <!-- 6. 11:20 라이온스 월례회 -->
-      <div class="schedule-card sc-private">
-        <div class="schedule-row-top">
-          <div class="schedule-time-badge">11:20</div>
-          <span class="schedule-type-tag tag-prayer">🤝 행사 · 전주</span>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-place">전북라이온스 원로위원회 6월 월례회 방문</div>
-          <div class="schedule-detail">전용기 의원 동행</div>
-        </div>
-      </div>
-
-      <!-- 7. 12:40 군산 대야재래시장 -->
+      <!-- 7. 11:30 익산 노인종합복지관 -->
       <div class="schedule-card sc-visit">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">12:40</div>
-          <span class="schedule-type-tag tag-visit">🛍️ 시장 방문 · 군산</span>
+          <div class="schedule-time-badge">11:30</div>
+          <span class="schedule-type-tag tag-visit">🤝 방문 · 익산</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">군산 대야재래시장 방문</div>
-          <div class="schedule-detail">박지원·최민희·전용기 의원, 김의겸·김재준 후보 동행</div>
-          <div class="schedule-addr">📍 대야재래시장</div>
+          <div class="schedule-place">익산시 노인종합복지관 방문</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 익산시 노인종합복지관</div>
           <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/군산 대야재래시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/군산%20대야재래시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+            <a href="https://map.kakao.com/link/search/익산시 노인종합복지관" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/익산시%20노인종합복지관" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
           </div>
         </div>
       </div>
 
-      <!-- 8. 14:30 군산 노인종합복지관 -->
-      <div class="schedule-card sc-visit">
-        <div class="schedule-row-top">
-          <div class="schedule-time-badge">14:30</div>
-          <span class="schedule-type-tag tag-visit">🤝 방문 · 군산</span>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-place">군산시 노인종합복지관 방문</div>
-          <div class="schedule-detail">박지원·최민희·전용기 의원, 김의겸·김재준 후보 동행</div>
-          <div class="schedule-addr">📍 군산시 노인종합복지관</div>
-          <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/군산시 노인종합복지관" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/군산시%20노인종합복지관" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. 16:00 익산 남부시장 -->
-      <div class="schedule-card sc-visit">
-        <div class="schedule-row-top">
-          <div class="schedule-time-badge">16:00</div>
-          <span class="schedule-type-tag tag-visit">🛍️ 시장 방문 · 익산</span>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-place">익산 남부시장 + 구시장 방문</div>
-          <div class="schedule-detail">박지원·최민희·전용기 의원, 최정호 후보 동행</div>
-          <div class="schedule-addr">📍 익산남부시장</div>
-          <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/익산남부시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/익산남부시장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. 17:30 송천역 저녁유세 (강조) -->
+      <!-- 8. 13:30 기자회견 2 -->
       <div class="schedule-card sc-highlight">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">17:30</div>
-          <span class="schedule-type-tag tag-stump-big">🔥 저녁유세 · 전주</span>
+          <div class="schedule-time-badge">13:30</div>
+          <span class="schedule-type-tag tag-treaty">📰 기자회견 · 전주</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">전주 송천역 네거리 저녁유세</div>
-          <div class="schedule-detail">박지원·최민희·전용기 의원 동행</div>
-          <div class="schedule-addr">📍 전주송천새마을금고 본점 (전주시 덕진구 동부대로 1142)</div>
+          <div class="schedule-place">기자회견</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 전북도의회 브리핑룸</div>
           <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/전주시 덕진구 동부대로 1142" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/전주시%20덕진구%20동부대로%201142" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+            <a href="https://map.kakao.com/link/search/전북도의회" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전북도의회" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
           </div>
         </div>
       </div>
 
-      <!-- 11. 19:30 에코시티 세병호 -->
+      <!-- 9. 15:20 현대자동차 전주공장 -->
       <div class="schedule-card sc-visit">
         <div class="schedule-row-top">
-          <div class="schedule-time-badge">19:30</div>
-          <span class="schedule-type-tag tag-visit">🌳 공원방문 · 전주</span>
+          <div class="schedule-time-badge">15:20</div>
+          <span class="schedule-type-tag tag-visit">🏭 인사 · 완주</span>
         </div>
         <div class="schedule-body">
-          <div class="schedule-place">전주 에코시티 세병호 방문</div>
-          <div class="schedule-detail">박지원·최민희·전용기 의원 동행</div>
-          <div class="schedule-addr">📍 전주 세병공원</div>
+          <div class="schedule-place">현대자동차 전주공장 인사</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 현대자동차전주공장 정문</div>
           <div class="schedule-map-row">
-            <a href="https://map.kakao.com/link/search/전주 세병공원" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
-            <a href="https://map.naver.com/p/search/전주%20세병공원" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+            <a href="https://map.kakao.com/link/search/현대자동차 전주공장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/현대자동차%20전주공장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. 16:20 전주혁신도시 상가 -->
+      <div class="schedule-card sc-visit">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">16:20</div>
+          <span class="schedule-type-tag tag-visit">🛍️ 시장 방문 · 전주</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">전주혁신도시 상가 방문</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 NH농협은행 전북혁신도시지점</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/NH농협은행 전북혁신도시지점" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/NH농협은행%20전북혁신도시지점" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. 17:30 한국농수산대학교 저녁유세 -->
+      <div class="schedule-card sc-stump">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">17:30</div>
+          <span class="schedule-type-tag tag-evening">🌆 저녁유세 · 전주</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">한국농수산대학교 사거리 저녁유세</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 한국농수산대학 사거리 (전주시 덕진구 콩쥐팥쥐로 1569)</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/전주시 덕진구 콩쥐팥쥐로 1569" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주시%20덕진구%20콩쥐팥쥐로%201569" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. 19:30 마무리 유세 (최대 강조!) -->
+      <div class="schedule-card sc-highlight">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">19:30</div>
+          <span class="schedule-type-tag tag-stump-big">🔥 마무리 유세 · 풍남문광장</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">이원택 도지사 후보<br>캠프 마무리 유세</div>
+          <div class="schedule-detail">한병도·윤준병·이성윤 의원, 조지훈 후보 동행</div>
+          <div class="schedule-addr">📍 풍남문광장 (전주시 완산구 전동 77)</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/풍남문광장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/풍남문광장" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. 21:30 삼천동 먹자골목 -->
+      <div class="schedule-card sc-visit">
+        <div class="schedule-row-top">
+          <div class="schedule-time-badge">21:30</div>
+          <span class="schedule-type-tag tag-visit">🍴 방문 · 전주</span>
+        </div>
+        <div class="schedule-body">
+          <div class="schedule-place">전주 삼천동 먹자골목 방문</div>
+          <div class="schedule-detail">한병도 원내대표 동행</div>
+          <div class="schedule-addr">📍 전주완산소방서 (전주시 완산구 거마평로 73)</div>
+          <div class="schedule-map-row">
+            <a href="https://map.kakao.com/link/search/전주완산소방서" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-kakao">🗺 카카오맵</a>
+            <a href="https://map.naver.com/p/search/전주완산소방서" target="_blank" rel="noopener noreferrer" class="schedule-map-btn map-naver">🗺 네이버맵</a>
           </div>
         </div>
       </div>
@@ -2645,6 +2798,35 @@
 
     <div class="schedule-note">
       💡 일정은 변동될 수 있습니다
+    </div>
+  </section>
+
+  <!-- ===== 방송연설 ===== -->
+  <section class="speech-section">
+    <h2 class="speech-title">📺 방송연설 보기</h2>
+    
+    <div class="speech-list">
+      <a href="https://www.youtube.com/watch?v=rLKY4EaeswE" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">JTV뉴스</div>
+          <div class="speech-item-title">제9회 지방선거 방송연설 (5/27)</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=j8OCEnrsU24" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">전주MBC</div>
+          <div class="speech-item-title">전북도지사 후보자 방송연설 (5/29)</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=R0OR8O0SoQo" target="_blank" rel="noopener noreferrer" class="speech-item">
+        <span class="speech-item-play">▶</span>
+        <div class="speech-item-text">
+          <div class="speech-item-source">KBS 전북</div>
+          <div class="speech-item-title">전북도지사 후보 연설 (5/26)</div>
+        </div>
+      </a>
     </div>
   </section>
 
