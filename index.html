@@ -1840,6 +1840,42 @@
     font-weight: 900;
   }
   
+
+  /* 호소문 영상 임베드 */
+  .bio-video-section {
+    margin: 0 0 22px 0;
+  }
+  .bio-video-label {
+    display: inline-block;
+    background: var(--warn-red);
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    letter-spacing: -0.025em;
+    box-shadow: 0 2px 8px rgba(217,40,40,0.3);
+  }
+  .bio-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000;
+    box-shadow: 0 4px 16px rgba(21,36,132,0.18);
+    border: 2px solid var(--dp-blue);
+  }
+  .bio-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   /* 타임라인 */
   .career-timeline {
     position: relative;
@@ -2028,7 +2064,7 @@
   <a href="#bio" class="top-notice">
     <div class="top-notice-icon">🌾</div>
     <div class="top-notice-text">
-      <div class="top-notice-title">민주당, 한길만 걸어온 이원택은?</div>
+      <div class="top-notice-title">이원택 호소문 및 이력 보기</div>
     </div>
     <div class="top-notice-cta">
       <span class="top-notice-cta-text">보러가기</span>
@@ -2543,6 +2579,18 @@
       <div class="bio-message-eyebrow">철새 정치 아닙니다</div>
       <div class="bio-message-title">2005년부터 지금까지<br><span class="blue">전북 · 민주당 한길</span></div>
     </div>
+    <!-- 호소문 영상 -->
+    <div class="bio-video-section">
+      <div class="bio-video-label">📢 이원택 후보 호소문</div>
+      <div class="bio-video">
+        <iframe src="https://www.youtube.com/embed/DDc5L1OcNDw" 
+          title="이원택 호소문" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
 
     <!-- 타임라인 -->
     <div class="career-timeline">
