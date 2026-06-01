@@ -19,7 +19,7 @@
 <meta property="og:title" content="민주당 원팀 도지사 이원택">
 <meta property="og:description" content="전북뉴스 · 공약보기 · 이원택 이력은?">
 <meta property="og:url" content="https://1taek.vercel.app/">
-<meta property="og:image" content="https://1taek.vercel.app/images/share.jpg?v=263776">
+<meta property="og:image" content="https://1taek.vercel.app/images/share.jpg?v=285970">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="민주당 원팀 도지사 이원택">
@@ -1841,31 +1841,99 @@
   }
   
 
-  /* 호소문 영상 임베드 */
+  /* ===== 호소문 영상 임베드 (강조 리뉴얼) ===== */
   .bio-video-section {
-    margin: 0 0 22px 0;
+    margin: 0 0 26px 0;
+    padding: 16px 14px 16px;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe9b8 100%);
+    border-radius: 16px;
+    border: 2.5px solid var(--gold);
+    box-shadow: 0 6px 20px rgba(232,180,18,0.25);
+    position: relative;
   }
-  .bio-video-label {
+  .bio-video-section::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--warn-red) 100%);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: video-glow 2.5s ease-in-out infinite;
+  }
+  @keyframes video-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+  }
+  
+  /* 빨간 펄스 긴급 라벨 */
+  .bio-video-label-row {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .bio-video-label-urgent {
     display: inline-block;
     background: var(--warn-red);
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 900;
     padding: 6px 14px;
     border-radius: 999px;
-    margin-bottom: 10px;
     letter-spacing: -0.025em;
-    box-shadow: 0 2px 8px rgba(217,40,40,0.3);
+    box-shadow: 0 3px 10px rgba(217,40,40,0.4);
+    animation: label-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes label-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  /* 강력한 헤드라인 카피 */
+  .bio-video-headline {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .bio-video-headline-main {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .bio-vh-big {
+    color: var(--dp-blue);
+  }
+  .bio-vh-emph {
+    font-size: 24px;
+    color: var(--warn-red);
+    text-shadow: 1px 1px 0 rgba(232,180,18,0.5);
+  }
+  .bio-video-headline-sub {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .bio-video-headline-sub strong {
+    color: var(--warn-red);
+    font-weight: 900;
+  }
+  
+  /* 영상 컨테이너 */
+  .bio-video-wrap {
+    position: relative;
+    margin-bottom: 12px;
   }
   .bio-video {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 12px;
     background: #000;
-    box-shadow: 0 4px 16px rgba(21,36,132,0.18);
-    border: 2px solid var(--dp-blue);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border: 3px solid var(--dp-blue);
   }
   .bio-video iframe {
     position: absolute;
@@ -1875,6 +1943,36 @@
     height: 100%;
     border: 0;
   }
+  
+  /* 영상 하단 정보 */
+  .bio-video-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 10px;
+    border: 1.5px solid var(--gold);
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--ink);
+    flex-wrap: wrap;
+  }
+  .bio-vf-time {
+    background: var(--dp-blue);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .bio-vf-msg {
+    color: var(--warn-red);
+    font-weight: 900;
+  }
+
 
   /* 타임라인 */
   .career-timeline {
@@ -2062,12 +2160,13 @@
   <!-- ===== HERO (메인 포스터) ===== -->
     <!-- ===== STICKY 상단 안내 ===== -->
   <a href="#bio" class="top-notice">
-    <div class="top-notice-icon">🌾</div>
+    <div class="top-notice-icon">🔥</div>
     <div class="top-notice-text">
-      <div class="top-notice-title">이원택 호소문 및 이력 보기</div>
+      <div class="top-notice-title">이것만은 꼭 봐주세요</div>
+      <div class="top-notice-sub">📹 21년의 진심, 이원택 호소 영상</div>
     </div>
     <div class="top-notice-cta">
-      <span class="top-notice-cta-text">보러가기</span>
+      <span class="top-notice-cta-text">바로보기</span>
       <span class="top-notice-cta-arrow">↓</span>
     </div>
   </a>
@@ -2090,51 +2189,40 @@
     <span class="section-tag">📰 전북선거 주요 뉴스</span>
 
     <div class="news-list">
+
+      <!-- 본 2: 뉴스1 - 4050 이중돌봄 (메가시티 강조) -->
+      <a href="https://www.news1.kr/local/jeonbuk/6183587" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
+        <div class="news-item-icon news-icon-press">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">뉴스1</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">부모 모시고 자녀 키우는 4050<br>이원택 "전북이 챙기겠다"</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <!-- 본 3: 노컷뉴스 - 4050 돌봄 부담 완화 -->
+      <a href="https://www.nocutnews.co.kr/news/6525695" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
+        <div class="news-item-icon news-icon-press">📰</div>
+        <div class="news-item-body">
+          <div class="news-meta">
+            <span class="news-source">노컷뉴스</span>
+            <span class="news-hot">🔥 HOT</span>
+          </div>
+          <div class="news-item-title">이원택, 4050세대 지원책 발표<br>"돌봄 부담 완화"</div>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
       <!-- ★ 본 1: 뉴시스 - 메가시티 (MAIN HOT) -->
       <a href="https://www.newsis.com/view/NISX20260531_0003650855" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
           <div class="news-meta">
             <span class="news-source">뉴시스</span>
-            <span class="news-hot">🔥 HOT</span>
           </div>
           <div class="news-item-title">이원택·민형배·위성곤<br>"호남·제주 초광역 메가시티 한뜻"</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 본 2: 전주MBC - 정책 협력 (메가시티 강화) -->
-      <a href="https://www.jmbc.co.kr/news/view/65088" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
-        <div class="news-item-icon news-icon-press">📺</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">전주MBC</span>
-          </div>
-          <div class="news-item-title">이원택, "전북·전남광주·제주<br>아우르는 정책 협력"</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 본 2: 유튜브 공동선언문 -->
-      <a href="https://www.youtube.com/watch?v=9Ogx6EgHsTc" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-youtube">▶</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">🎬 유튜브 영상</span>
-          </div>
-          <div class="news-item-title">5월 31일 호남과 제주가 하나로!<br>공동선언문 바로가기</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 본 3: 전라일보 - 새만금 9조 (메가시티 핵심 동력) -->
-      <a href="https://www.jeollailbo.com/news/articleView.html?idxno=801484" target="_blank" rel="noopener noreferrer" class="news-item">
-        <div class="news-item-icon news-icon-press">📰</div>
-        <div class="news-item-body">
-          <div class="news-meta">
-            <span class="news-source">전라일보</span>
-          </div>
-          <div class="news-item-title">서영교 "현대차 새만금 9조 투자, 국회가 뒷받침"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
@@ -2579,18 +2667,37 @@
       <div class="bio-message-eyebrow">철새 정치 아닙니다</div>
       <div class="bio-message-title">2005년부터 지금까지<br><span class="blue">전북 · 민주당 한길</span></div>
     </div>
-    <!-- 호소문 영상 -->
+    <!-- 호소문 영상 (강조 리뉴얼) -->
     <div class="bio-video-section">
-      <div class="bio-video-label">📢 이원택 후보 호소문</div>
-      <div class="bio-video">
-        <iframe src="https://www.youtube.com/embed/DDc5L1OcNDw" 
-          title="이원택 호소문" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen></iframe>
+      <div class="bio-video-label-row">
+        <span class="bio-video-label-urgent">🚨 D-02 후보 직접 호소</span>
+      </div>
+      
+      <div class="bio-video-headline">
+        <div class="bio-video-headline-main">
+          <span class="bio-vh-big">전북도민께 드리는</span><br>
+          <span class="bio-vh-emph">21년 한길의 약속</span>
+        </div>
+        <div class="bio-video-headline-sub">
+          이원택 후보가 <strong>직접</strong> 말씀드립니다
+        </div>
+      </div>
+      
+      <div class="bio-video-wrap">
+        <div class="bio-video">
+          <iframe src="https://www.youtube.com/embed/DDc5L1OcNDw" 
+            title="이원택 호소문" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <div class="bio-video-footer">
+        <span class="bio-vf-time">🕐 1분 30초</span>
+        <span class="bio-vf-msg">꼭 한 번만 들어주세요</span>
       </div>
     </div>
-
 
     <!-- 타임라인 -->
     <div class="career-timeline">
