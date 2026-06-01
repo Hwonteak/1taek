@@ -19,7 +19,7 @@
 <meta property="og:title" content="민주당 원팀 도지사 이원택">
 <meta property="og:description" content="전북뉴스 · 공약보기 · 이원택 이력은?">
 <meta property="og:url" content="https://1taek.vercel.app/">
-<meta property="og:image" content="https://1taek.vercel.app/images/share.jpg?v=285970">
+<meta property="og:image" content="https://1taek.vercel.app/images/share.jpg?v=316169">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="민주당 원팀 도지사 이원택">
@@ -150,79 +150,42 @@
   }
 
 
-  /* ===== 이원택 호소문 (깔끔 미니멀) ===== */
+  /* ===== 이원택 호소문 (5060 친화 강조) ===== */
   .hero-appeal {
     background: white;
     color: var(--ink);
     margin: 0 auto;
     max-width: 480px;
-    padding: 22px 20px;
+    padding: 26px 22px 24px;
     border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.25);
   }
-  
-  /* 호소문 라벨 */
   .hero-appeal-label {
-    display: inline-block;
-    background: var(--dp-blue);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: -0.025em;
-    margin-bottom: 16px;
-  }
-  
-  /* 경고 라인 */
-  .appeal-warning {
-    margin: 0 0 18px 0;
-    padding: 10px 12px;
-    background: #fff4f4;
-    border-left: 4px solid var(--warn-red);
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--ink);
-    letter-spacing: -0.025em;
-  }
-  .appeal-warning strong {
-    color: var(--warn-red);
-    font-weight: 900;
-  }
-  
-  /* 본문 라인 */
-  .appeal-text {
-    margin: 0 0 16px 0;
-    font-size: 15.5px;
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--ink);
-    letter-spacing: -0.025em;
-  }
-  .appeal-text strong {
+    display: block;
     color: var(--dp-blue);
+    font-size: 21px;
     font-weight: 900;
-    font-size: 16.5px;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 2.5px solid var(--dp-blue);
+    line-height: 1.3;
   }
-  
-  /* 개인적 다짐 */
-  .appeal-personal {
-    margin: 18px 0 0 0;
-    padding-top: 16px;
-    border-top: 1px dashed #d0d0d0;
-    font-size: 15.5px;
-    font-weight: 600;
-    line-height: 1.6;
+  .hero-appeal-label::before {
+    content: '📢 ';
+  }
+  .hero-appeal p {
+    margin: 0 0 14px 0;
+    font-size: 17.5px;
+    font-weight: 700;
+    line-height: 1.7;
     color: var(--ink);
     letter-spacing: -0.025em;
   }
-  .appeal-personal strong {
-    color: var(--dp-blue-deep);
-    font-weight: 900;
-    font-size: 16.5px;
+  .hero-appeal p:last-child {
+    margin-bottom: 0;
   }
+
 
   /* 호소 메시지 (구) */
   
@@ -577,7 +540,7 @@
     border-top: 1px solid var(--line);
   }
   .fb-title {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 900;
     color: var(--ink);
     margin: 0 0 10px 0;
@@ -735,13 +698,13 @@
     min-width: 0;
   }
   .top-notice-title {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.025em;
     line-height: 1.25;
   }
   .top-notice-sub {
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 800;
     opacity: 0.85;
     margin-top: 2px;
@@ -861,7 +824,7 @@
     color: white;
     padding: 6px 12px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 900;
     letter-spacing: 0;
     flex-shrink: 0;
@@ -901,14 +864,14 @@
     margin-bottom: 4px;
   }
   .schedule-detail {
-    font-size: 13.5px;
+    font-size: 14.5px;
     color: var(--muted);
     line-height: 1.45;
     margin-bottom: 6px;
     font-weight: 600;
   }
   .schedule-addr {
-    font-size: 13.5px;
+    font-size: 14px;
     color: var(--ink);
     font-weight: 700;
     line-height: 1.4;
@@ -927,7 +890,7 @@
     text-align: center;
     padding: 11px 8px;
     border-radius: 9px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 900;
     text-decoration: none;
     letter-spacing: -0.025em;
@@ -957,9 +920,9 @@
     box-shadow: 0 4px 16px rgba(232,180,18,0.25) !important;
   }
   .news-item-mega .news-item-title {
-    font-size: 17px !important;
+    font-size: 19px !important;
     font-weight: 900 !important;
-    line-height: 1.4 !important;
+    line-height: 1.45 !important;
     color: var(--ink) !important;
   }
   .news-item-mega .news-source {
@@ -1255,12 +1218,12 @@
     border-radius: 10px !important;
   }
   .news-item-compact .news-source {
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     margin-bottom: 4px;
     font-weight: 700;
   }
   .news-item-compact .news-item-title {
-    font-size: 14.5px !important;
+    font-size: 15.5px !important;
     line-height: 1.4 !important;
     font-weight: 800 !important;
   }
@@ -1433,7 +1396,7 @@
     display: inline-block;
     background: var(--dp-blue);
     color: white;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 900;
     padding: 8px 16px;
     border-radius: 999px;
@@ -2304,24 +2267,11 @@
       
       <!-- 이원택 호소문 -->
       <div class="hero-appeal">
-        <div class="hero-appeal-label">📢 이원택 호소문</div>
-        
-        <p class="appeal-warning">⚠️ 무소속 후보는 <strong>절대 민주당 사람이 아닙니다.</strong></p>
-        
-        <p class="appeal-text">
-          이원택을 택하면<br>
-          <strong>이재명 대통령에게 힘이 실립니다.</strong>
-        </p>
-        
-        <p class="appeal-text">
-          힘이 실린 대통령은<br>
-          <strong>더 많은 기회를 전북에 줄 수 있습니다.</strong>
-        </p>
-        
-        <p class="appeal-personal">
-          저 이원택,<br>
-          <strong>오로지 민주당으로 살아왔습니다.</strong>
-        </p>
+        <div class="hero-appeal-label">이원택 호소문</div>
+        <p>무소속 후보는 절대 민주당 사람이 아닙니다.</p>
+        <p>이원택을 택하면 이재명 대통령에게 힘이 실립니다.</p>
+        <p>힘이 실린 대통령은 더 많은 기회를 전북에 줄 수 있습니다.</p>
+        <p>저 이원택, 오로지 민주당으로 살아왔습니다.</p>
       </div>
     </div>
   </section>
@@ -2413,16 +2363,6 @@
       </a>
     </div>
   </section>
-  <!-- ===== 페이스북 게시물 ===== -->
-  <section class="fb-section">
-    <h2 class="fb-title">📘 이원택 페이스북</h2>
-    
-    <a href="https://www.facebook.com/we1taeg/?locale=ko_KR" target="_blank" rel="noopener noreferrer" class="fb-big-card">
-      <div class="fb-big-card-icon">f</div>
-      <div class="fb-big-card-text">이원택 후보 소식 보고 응원해주기!</div>
-      <div class="fb-big-card-arrow">→</div>
-    </a>
-  </section>
 
   <section class="picker-section alt">
     <span class="section-tag gold">이원택의 약속</span>
@@ -2435,6 +2375,16 @@
     <div id="promiseCatArea">
       <div class="pledge-empty">↑ 위에서 분야 버튼을 눌러주시면<br>공약이 나타납니다</div>
     </div>
+  </section>
+  <!-- ===== 페이스북 게시물 ===== -->
+  <section class="fb-section">
+    <h2 class="fb-title">📘 이원택 페이스북</h2>
+    
+    <a href="https://www.facebook.com/we1taeg/?locale=ko_KR" target="_blank" rel="noopener noreferrer" class="fb-big-card">
+      <div class="fb-big-card-icon">f</div>
+      <div class="fb-big-card-text">이원택 후보 소식 보고 응원해주기!</div>
+      <div class="fb-big-card-arrow">→</div>
+    </a>
   </section>
 
   <!-- ===== 세대·계층별 공약 ===== -->
