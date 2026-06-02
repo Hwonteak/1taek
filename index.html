@@ -112,7 +112,7 @@
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 13.5px;
   }
   .election-tag {
     background: rgba(255,255,255,0.16);
@@ -163,43 +163,233 @@
     border: 0;
   }
 
-
-  /* ===== 이원택 호소문 (5060 친화 강조) ===== */
+  /* ===== 이원택 호소문 (간결 강조) ===== */
+  /* ===== 이원택 호소문 (이원택의 약속 스타일) ===== */
   .hero-appeal {
-    background: white;
-    color: var(--ink);
-    margin: 0 auto;
+    position: relative;
+    margin: 0 auto 18px;
     max-width: 480px;
-    padding: 26px 22px 24px;
-    border-radius: 14px;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+    
   }
+  
+  /* 노란 알약 배지 (박스 위로 튀어나오게) */
   .hero-appeal-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--dp-blue-deep);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 15.5px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    z-index: 2;
+    white-space: nowrap;
+  }
+  
+  /* 다크 네이비 둥근 박스 */
+  .hero-appeal-box {
+    background: linear-gradient(180deg, var(--dp-blue-deep) 0%, var(--dp-blue) 100%);
+    border-radius: 22px;
+    padding: 40px 24px 32px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  
+  /* 호소문 헤드라인 */
+  .appeal-headline {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+  }
+  .appeal-headline strong {
+    display: inline;
+    
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+    letter-spacing: -0.04em;
+  }
+
+
+  /* ===== 이원택의 3대 약속 (보도자료 기반) ===== */
+  .hero-promises {
+    max-width: 480px;
+    margin: 22px auto 16px;
+  }
+  .hero-promises-title {
+    text-align: center;
+    color: white;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px dashed rgba(232,180,18,0.5);
+  }
+  
+  .hero-promise {
     display: block;
+    background: white;
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border-left: 6px solid;
+    transition: transform 0.15s;
+  }
+  .hero-promise:last-child { margin-bottom: 0; }
+  .hero-promise:active {
+    transform: scale(0.98);
+  }
+  
+  /* 색상 구분 */
+  .hero-promise-future {
+    border-left-color: var(--dp-blue);
+  }
+  .hero-promise-future .hero-promise-label {
     color: var(--dp-blue);
-    font-size: 21px;
+  }
+  .hero-promise-present {
+    border-left-color: #1e8449;
+  }
+  .hero-promise-present .hero-promise-label {
+    color: #1e8449;
+  }
+  .hero-promise-past {
+    border-left-color: #c0392b;
+  }
+  .hero-promise-past .hero-promise-label {
+    color: #c0392b;
+  }
+  /* 첫 번째 카드 (4050) 폰트 강조 */
+  .hero-promise-featured {
+    padding: 22px 20px 20px !important;
+    border-left-width: 8px !important;
+    background: linear-gradient(180deg, #f0fff4 0%, white 100%) !important;
+    box-shadow: 0 6px 20px rgba(30,132,73,0.35) !important;
+    transform: scale(1.02);
+  }
+  .hero-promise-featured .hero-promise-icon {
+    font-size: 32px !important;
+  }
+  .hero-promise-featured .hero-promise-label {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.035em !important;
+  }
+  .hero-promise-featured .hero-promise-body {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    font-weight: 700 !important;
+  }
+  .hero-promise-featured .hero-promise-body strong {
+    font-size: 17.5px !important;
+    font-weight: 900 !important;
+    color: #1e8449 !important;
+    margin-bottom: 6px !important;
+  }
+
+  
+  .hero-promise-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .hero-promise-icon {
+    font-size: 26px;
+    line-height: 1;
+  }
+  .hero-promise-label {
+    font-size: 17px;
     font-weight: 900;
     letter-spacing: -0.03em;
-    margin-bottom: 18px;
-    padding-bottom: 14px;
-    border-bottom: 2.5px solid var(--dp-blue);
-    line-height: 1.3;
   }
-  .hero-appeal-label::before {
-    content: '📢 ';
-  }
-  .hero-appeal p {
-    margin: 0 0 14px 0;
-    font-size: 17.5px;
-    font-weight: 700;
-    line-height: 1.7;
+  
+  .hero-promise-body {
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.55;
     color: var(--ink);
     letter-spacing: -0.025em;
   }
-  .hero-appeal p:last-child {
-    margin-bottom: 0;
+  .hero-promise-body strong {
+    display: inline-block;
+    font-size: 15.5px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  
+
+  .hero-promise-list {
+    margin: 6px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hero-promise-list li {
+    position: relative;
+    padding: 2px 0 2px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .hero-promise-list li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    font-weight: 900;
+    color: var(--dp-blue);
+  }
+  .hero-promise-past .hero-promise-list li::before { color: #c0392b; }
+  .hero-promise-present .hero-promise-list li::before { color: #1e8449; }
+  .hero-promise-future .hero-promise-list li::before { color: var(--dp-blue); }
+  .hero-promise-list li em {
+    font-style: normal;
+    color: var(--muted);
+    font-weight: 500;
   }
 
+  /* 마무리 다짐 메시지 */
+  .hero-pledge {
+    max-width: 480px;
+    margin: 18px auto 0;
+    padding: 18px 18px;
+    background: linear-gradient(135deg, var(--gold) 0%, #ffd83d 100%);
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 16px rgba(232,180,18,0.4);
+  }
+  .hero-pledge p {
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: var(--dp-blue-deep);
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+  }
+  .hero-pledge p strong {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 18.5px;
+    font-weight: 900;
+    color: var(--dp-blue-deep);
+  }
 
   /* 호소 메시지 (구) */
   
@@ -252,7 +442,7 @@
     font-size: 22px;
     font-weight: 900;
     letter-spacing: -0.035em;
-    line-height: 1.3;
+    line-height: 1.4;
     white-space: nowrap;
   }
   .team-card.red .team-headline { color: var(--warn-red); font-size: 20px; }
@@ -283,7 +473,7 @@
     margin-top: 3px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     flex-wrap: wrap;
   }
   .node-name {
@@ -292,7 +482,7 @@
     letter-spacing: -0.02em;
   }
   .node-party {
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 800;
     padding: 3px 9px;
     border-radius: 5px;
@@ -333,7 +523,7 @@
     font-size: 23px;
     font-weight: 900;
     text-align: center;
-    line-height: 1.35;
+    line-height: 1.5;
     letter-spacing: -0.02em;
   }
   .team-card.blue .team-result { background: var(--gold); color: var(--dp-blue-deep); }
@@ -356,7 +546,7 @@
     font-weight: 800;
     color: white;
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.4;
     margin-bottom: 4px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.8);
   }
@@ -382,14 +572,14 @@
   .promise-cat-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     margin-top: 16px;
   }
   .promise-cat-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     padding: 26px 10px;
     background: white;
     border: 2.5px solid var(--line);
@@ -440,7 +630,7 @@
   }
   .pledge-slogan-tag {
     display: block;
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 700;
     opacity: 0.85;
     margin-bottom: 5px;
@@ -451,7 +641,7 @@
   .pledge-group-title {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     font-size: 19px;
     font-weight: 900;
     letter-spacing: -0.02em;
@@ -468,7 +658,7 @@
   .pledge-core-num {
     display: inline-block;
     color: white;
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 900;
     padding: 3px 9px;
     border-radius: 6px;
@@ -512,15 +702,16 @@
   .age-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     margin-top: 16px;
   }
   .age-btn {
+    min-height: 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    padding: 18px 6px;
+    padding: 14px 12px;
     background: white;
     border: 2.5px solid var(--line);
     border-radius: 14px;
@@ -542,7 +733,7 @@
     letter-spacing: -0.02em;
   }
   .age-sub {
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 700;
     color: var(--age-color);
   }
@@ -565,7 +756,7 @@
   .fb-big-card {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: linear-gradient(135deg, #1877F2 0%, #0d5dbd 100%);
     border-radius: 10px;
     padding: 10px 14px;
@@ -593,7 +784,7 @@
     font-size: 15px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.3;
+    line-height: 1.4;
   }
   .fb-big-card-arrow {
     font-size: 20px;
@@ -653,7 +844,7 @@
   }
   .speech-item-text { flex: 1; min-width: 0; }
   .speech-item-source {
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 800;
     color: var(--dp-blue);
     letter-spacing: -0.02em;
@@ -715,7 +906,7 @@
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.25;
+    line-height: 1.4;
   }
   .top-notice-sub {
     font-size: 13.5px;
@@ -793,7 +984,7 @@
   .schedule-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   
   /* 카드 기본 */
@@ -801,7 +992,7 @@
     background: white;
     border: 1.5px solid var(--line);
     border-radius: 12px;
-    padding: 12px 14px 14px;
+    padding: 18px 16px; 14px;
     position: relative;
     transition: all 0.15s;
   }
@@ -830,7 +1021,7 @@
   .schedule-row-top {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 8px;
   }
   .schedule-time-badge {
@@ -851,7 +1042,7 @@
   
   /* 태그 색상 */
   .schedule-type-tag {
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 800;
     padding: 4px 10px;
     border-radius: 999px;
@@ -874,7 +1065,7 @@
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.025em;
-    line-height: 1.35;
+    line-height: 1.5;
     margin-bottom: 4px;
   }
   .schedule-detail {
@@ -896,13 +1087,13 @@
   .schedule-map-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 12px;
     margin-top: 8px;
   }
   .schedule-map-btn {
     display: block;
     text-align: center;
-    padding: 11px 8px;
+    padding: 10px 14px;
     border-radius: 9px;
     font-size: 14px;
     font-weight: 900;
@@ -920,7 +1111,7 @@
     background: var(--cream);
     border-radius: 8px;
     text-align: center;
-    font-size: 12.5px;
+    font-size: 13.5px;
     color: var(--muted);
     font-weight: 700;
   }
@@ -1014,7 +1205,7 @@
     font-size: 19px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.25;
+    line-height: 1.4;
   }
   .share-btn-mega-sub {
     font-size: 14px;
@@ -1045,7 +1236,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     font-family: var(--font-base);
     animation: fab-pulse 2.5s infinite;
     transition: transform 0.15s;
@@ -1181,7 +1372,7 @@
     font-weight: 900;
     color: white;
     letter-spacing: -0.035em;
-    line-height: 1.25;
+    line-height: 1.4;
     margin-bottom: 16px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
@@ -1199,7 +1390,7 @@
     font-size: 15px;
     line-height: 1.65;
     color: rgba(255,255,255,0.95);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.015em;
   }
   .featured-pr-message strong {
@@ -1257,13 +1448,13 @@
     margin-top: 12px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   .news-item {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 16px 16px;
+    padding: 18px 16px;
     background: white;
     border: 2px solid var(--dp-blue-line);
     border-radius: 14px;
@@ -1329,7 +1520,7 @@
   .news-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     margin-bottom: 6px;
     flex-wrap: wrap;
   }
@@ -1344,7 +1535,7 @@
     gap: 3px;
     background: linear-gradient(135deg, #ff3838 0%, #ff6b00 100%);
     color: white;
-    font-size: 11px;
+    font-size: 13.5px;
     font-weight: 900;
     padding: 3px 8px;
     border-radius: 6px;
@@ -1412,7 +1603,7 @@
     color: white;
     font-size: 18px;
     font-weight: 900;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 999px;
     letter-spacing: -0.01em;
   }
@@ -1425,7 +1616,7 @@
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.035em;
-    line-height: 1.2;
+    line-height: 1.4;
     margin-top: 10px;
   }
   .section-title .blue { color: var(--dp-blue); }
@@ -1435,7 +1626,7 @@
     font-size: 19px;
     color: var(--muted);
     margin-top: 8px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.55;
   }
 
@@ -1464,7 +1655,7 @@
   .promise-num {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: var(--gold);
     color: var(--dp-blue-deep);
     padding: 6px 14px 6px 6px;
@@ -1486,7 +1677,7 @@
     font-size: 25px;
     font-weight: 900;
     letter-spacing: -0.03em;
-    line-height: 1.3;
+    line-height: 1.4;
   }
   .promise-title .accent { color: var(--gold); }
   .promise-desc {
@@ -1494,11 +1685,11 @@
     font-size: 18px;
     line-height: 1.65;
     opacity: 0.92;
-    font-weight: 500;
+    font-weight: 600;
   }
   .promise-tags {
     margin-top: 12px;
-    display: flex; flex-wrap: wrap; gap: 8px;
+    display: flex; flex-wrap: wrap; gap: 12px;
   }
   .promise-tag {
     font-size: 15px;
@@ -1511,6 +1702,25 @@
   }
 
   /* ===== PICKER (시·군 / 세대) ===== */
+
+  .picker-header-center {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .picker-guide {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+    padding: 14px 16px;
+    background: rgba(21,36,132,0.04);
+    border-radius: 10px;
+    border: 1px dashed rgba(21,36,132,0.18);
+    letter-spacing: -0.025em;
+  }
+
   .picker-section {
     padding: 32px 24px 28px;
     background: white;
@@ -1524,7 +1734,7 @@
   .region-grid, .age-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 12px;
     margin-top: 16px;
     text-align: center;
   }
@@ -1565,7 +1775,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    min-height: 124px;
+    min-height: 64px;
   }
   .age-btn:active { transform: scale(0.96); }
   .age-btn.active {
@@ -1636,7 +1846,7 @@
     text-align: center;
     line-height: 1.4;
   }
-  .pledge-list { list-style: none; display: grid; gap: 8px; }
+  .pledge-list { list-style: none; display: grid; gap: 12px; }
   .pledge-item {
     display: flex; gap: 14px; align-items: flex-start;
     padding: 16px 16px;
@@ -1644,7 +1854,7 @@
     border-radius: 12px;
     font-size: 21px;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 600;
   }
   .pledge-check {
     flex-shrink: 0;
@@ -1670,7 +1880,7 @@
   }
 
   /* ===== VOTE INFO ===== */
-  .vote-grid { display: grid; gap: 10px; margin-top: 16px; }
+  .vote-grid { display: grid; gap: 12px; margin-top: 16px; }
   .vote-card {
     display: flex; gap: 16px; align-items: center;
     padding: 16px 18px;
@@ -1697,7 +1907,7 @@
   .vote-label { font-size: 20px; opacity: 0.8; font-weight: 700; }
   .vote-card.primary .vote-label { color: var(--gold); opacity: 1; }
   .vote-value { font-size: 21px; font-weight: 900; margin-top: 4px; }
-  .vote-extra { font-size: 15px; opacity: 0.75; margin-top: 4px; font-weight: 500; }
+  .vote-extra { font-size: 15px; opacity: 0.75; margin-top: 4px; font-weight: 600; }
 
   /* ===== ADDRESS SEARCH ===== */
   .addr-search-card {
@@ -1714,7 +1924,7 @@
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.03em;
-    line-height: 1.3;
+    line-height: 1.4;
     white-space: nowrap;
   }
   .addr-title .blue { color: var(--dp-blue); }
@@ -1722,13 +1932,13 @@
     margin-top: 8px;
     font-size: 16px;
     color: var(--muted);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.6;
   }
   .addr-input-row {
     margin-top: 18px;
     display: flex;
-    gap: 8px;
+    gap: 12px;
     width: 100%;
   }
   .addr-input:focus { border-color: var(--dp-blue); }
@@ -1755,7 +1965,7 @@
     font-size: 15px;
     color: var(--muted);
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: 600;
   }
   .addr-hint b { color: var(--dp-blue); font-weight: 800; }
 
@@ -1912,7 +2122,7 @@
     font-size: 22px;
     font-weight: 900;
     color: var(--ink);
-    line-height: 1.35;
+    line-height: 1.5;
     letter-spacing: -0.03em;
     margin-bottom: 10px;
   }
@@ -1926,141 +2136,6 @@
     color: var(--dp-blue);
     font-weight: 900;
   }
-  
-
-  /* ===== 호소문 영상 임베드 (강조 리뉴얼) ===== */
-  .bio-video-section {
-    margin: 0 0 26px 0;
-    padding: 16px 14px 16px;
-    background: linear-gradient(135deg, #fff3e0 0%, #ffe9b8 100%);
-    border-radius: 16px;
-    border: 2.5px solid var(--gold);
-    box-shadow: 0 6px 20px rgba(232,180,18,0.25);
-    position: relative;
-  }
-  .bio-video-section::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--warn-red) 100%);
-    border-radius: 18px;
-    z-index: -1;
-    opacity: 0.4;
-    animation: video-glow 2.5s ease-in-out infinite;
-  }
-  @keyframes video-glow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.7; }
-  }
-  
-  /* 빨간 펄스 긴급 라벨 */
-  .bio-video-label-row {
-    text-align: center;
-    margin-bottom: 12px;
-  }
-  .bio-video-label-urgent {
-    display: inline-block;
-    background: var(--warn-red);
-    color: white;
-    font-size: 13px;
-    font-weight: 900;
-    padding: 6px 14px;
-    border-radius: 999px;
-    letter-spacing: -0.025em;
-    box-shadow: 0 3px 10px rgba(217,40,40,0.4);
-    animation: label-pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes label-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
-  /* 강력한 헤드라인 카피 */
-  .bio-video-headline {
-    text-align: center;
-    margin-bottom: 14px;
-  }
-  .bio-video-headline-main {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--ink);
-    line-height: 1.3;
-    letter-spacing: -0.03em;
-    margin-bottom: 6px;
-  }
-  .bio-vh-big {
-    color: var(--dp-blue);
-  }
-  .bio-vh-emph {
-    font-size: 24px;
-    color: var(--warn-red);
-    text-shadow: 1px 1px 0 rgba(232,180,18,0.5);
-  }
-  .bio-video-headline-sub {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-  .bio-video-headline-sub strong {
-    color: var(--warn-red);
-    font-weight: 900;
-  }
-  
-  /* 영상 컨테이너 */
-  .bio-video-wrap {
-    position: relative;
-    margin-bottom: 12px;
-  }
-  .bio-video {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #000;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    border: 3px solid var(--dp-blue);
-  }
-  .bio-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  
-  /* 영상 하단 정보 */
-  .bio-video-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 10px;
-    border: 1.5px solid var(--gold);
-    font-size: 13.5px;
-    font-weight: 800;
-    color: var(--ink);
-    flex-wrap: wrap;
-  }
-  .bio-vf-time {
-    background: var(--dp-blue);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 12.5px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-  }
-  .bio-vf-msg {
-    color: var(--warn-red);
-    font-weight: 900;
-  }
-
-
   /* 타임라인 */
   .career-timeline {
     position: relative;
@@ -2105,11 +2180,11 @@
     font-weight: 900;
     color: var(--dp-blue);
     letter-spacing: -0.025em;
-    line-height: 1.3;
+    line-height: 1.4;
     margin-bottom: 3px;
   }
   .career-period {
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 800;
     color: var(--muted);
     margin-bottom: 8px;
@@ -2136,7 +2211,7 @@
     font-weight: 900;
   }
   .career-note {
-    font-size: 12.5px;
+    font-size: 13.5px;
     color: var(--muted);
     font-weight: 600;
     line-height: 1.4;
@@ -2221,7 +2296,7 @@
   .footer-office {
     color: rgba(255,255,255,0.92);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.5;
     margin-bottom: 14px;
     padding-bottom: 14px;
@@ -2262,7 +2337,7 @@
     <div class="hero-topbar">
       <div class="party-mark">
         <span class="party-mark-icon">★</span>
-        <span>더불어민주당 원팀 도지사 후보</span>
+        <span>그래도 민주당을 선택하길 잘했다고 만들겠습니다.</span>
       </div>
       <div class="election-tag">제9회 지방선거</div>
     </div>
@@ -2271,7 +2346,7 @@
     <div class="hero-video-section">
       <div class="hero-video-wrap">
         <div class="hero-video">
-          <iframe src="https://www.youtube.com/embed/OXXPcdTGQBM" 
+          <iframe src="https://www.youtube.com/embed/ozffD4M-wX8" 
             title="이원택 후보 호소 영상" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -2279,13 +2354,61 @@
         </div>
       </div>
       
+      <!-- 이원택의 3대 약속 (보도자료 기반) -->
+      <div class="hero-promises">
+        <div class="hero-promises-title">이원택의 3대 약속</div>
+
+        
+        <!-- 1. 전북의 현재 - 4050 세대 든든하게 -->
+        <a href="#ageSection" class="hero-promise hero-promise-present hero-promise-featured">
+          <div class="hero-promise-head">
+            <span class="hero-promise-icon">💼</span>
+            <span class="hero-promise-label">전북의 현재 · 4050 세대 든든하게</span>
+          </div>
+          <div class="hero-promise-body">
+            <strong>부모 모시고 자녀 키우는 이중돌봄 세대</strong><br>
+            • 이중돌봄 부담 경감 · 재취업·경력전환 지원<br>
+            • 소상공인 지원 확대<br>
+            • 햇빛·바람 연금 — 가구당 최대 1,000만 원
+          </div>
+        </a>
+        
+        <!-- 2. 전북의 미래 - 메가비전 -->
+        <a href="#ageSection" class="hero-promise hero-promise-future">
+          <div class="hero-promise-head">
+            <span class="hero-promise-icon">🚀</span>
+            <span class="hero-promise-label">전북의 미래 · 호남·제주 초광역 메가시티</span>
+          </div>
+          <div class="hero-promise-body">
+            <strong>80년 만의 대결합, 균형발전의 새 축</strong><br>
+            • AI반도체 200조 유치 → 20만 일자리<br>
+            • 전북성장공사 군산 설립<br>
+            • 새만금 SOC 완공 · 인입철도 2029 개통
+          </div>
+        </a>
+        
+        <!-- 3. 전북의 과거 - 어르신께 보답하는 전북 -->
+        <a href="#ageSection" class="hero-promise hero-promise-past">
+          <div class="hero-promise-head">
+            <span class="hero-promise-icon">👴</span>
+            <span class="hero-promise-label">전북의 과거 · 어르신께 보답하는 전북</span>
+          </div>
+          <div class="hero-promise-body">
+            <strong>평생 전북을 일궈온 어르신께</strong><br>
+            • 전북형 AIP — 살던 집에서 존엄한 노후<br>
+            • 손주돌봄수당 도입<br>
+            • 어르신 일자리 10만 개 시대
+          </div>
+        </a>
+
+
+      </div>
+
       <!-- 이원택 호소문 -->
       <div class="hero-appeal">
-        <div class="hero-appeal-label">이원택 호소문</div>
-        <p>무소속 후보는 절대 민주당 사람이 아닙니다.</p>
-        <p>이원택을 택하면 이재명 대통령에게 힘이 실립니다.</p>
-        <p>힘이 실린 대통령은 더 많은 기회를 전북에 줄 수 있습니다.</p>
-        <p>저 이원택, 오로지 민주당으로 살아왔습니다.</p>
+        <div class="hero-appeal-box">
+          <p class="appeal-headline">오로지 전북, <strong>반드시 체감성장</strong></p>
+        </div>
       </div>
     </div>
   </section>
@@ -2311,37 +2434,6 @@
     <div class="bio-message">
       <div class="bio-message-eyebrow">철새 정치 아닙니다</div>
       <div class="bio-message-title">2005년부터 지금까지<br><span class="blue">전북 · 민주당 한길</span></div>
-    </div>
-    <!-- 호소문 영상 (강조 리뉴얼) -->
-    <div class="bio-video-section">
-      <div class="bio-video-label-row">
-        <span class="bio-video-label-urgent">🚨 D-02 후보 직접 호소</span>
-      </div>
-      
-      <div class="bio-video-headline">
-        <div class="bio-video-headline-main">
-          <span class="bio-vh-big">전북도민께 드리는</span><br>
-          <span class="bio-vh-emph">21년 한 길 약속</span>
-        </div>
-        <div class="bio-video-headline-sub">
-          이원택 후보가 <strong>직접</strong> 말씀드립니다
-        </div>
-      </div>
-      
-      <div class="bio-video-wrap">
-        <div class="bio-video">
-          <iframe src="https://www.youtube.com/embed/DDc5L1OcNDw" 
-            title="이원택 호소문" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="bio-video-footer">
-        <span class="bio-vf-time">🕐 1분 30초</span>
-        <span class="bio-vf-msg">꼭 한 번만 들어주세요</span>
-      </div>
     </div>
 
     <!-- 타임라인 -->
@@ -2454,16 +2546,15 @@
         </div>
         <div class="news-arrow">→</div>
       </a>
-
-      <!-- 본 3: 노컷뉴스 - 4050 돌봄 부담 완화 -->
-      <a href="https://www.nocutnews.co.kr/news/6525695" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
+      <!-- 본: 쿠키뉴스 - 전북 1천만원 (HOT) -->
+      <a href="https://www.kukinews.com/article/view/kuk202605300008" target="_blank" rel="noopener noreferrer" class="news-item news-item-mega">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
           <div class="news-meta">
-            <span class="news-source">노컷뉴스</span>
+            <span class="news-source">쿠키뉴스</span>
             <span class="news-hot">🔥 HOT</span>
           </div>
-          <div class="news-item-title">이원택, 4050세대 지원책 발표<br>"돌봄 부담 완화"</div>
+          <div class="news-item-title">이원택 "전북에 살면<br>연 1천만원 드립니다"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
@@ -2491,23 +2582,14 @@
         </div>
         <div class="news-arrow">→</div>
       </a>
-
-      <!-- 서브 5: 더팩트 - 군산 전북성장공사 (메가시티 새만금 거점) -->
-      <a href="https://v.daum.net/v/20260525232954031" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
+      <!-- 본: 세계일보 - 무소속으론 전북 발전 한계 -->
+      <a href="https://www.segye.com/newsView/20260602507319?OutUrl=naver" target="_blank" rel="noopener noreferrer" class="news-item">
         <div class="news-item-icon news-icon-press">📰</div>
         <div class="news-item-body">
-          <div class="news-source">더팩트</div>
-          <div class="news-item-title">군산 '전북성장공사' 설립…새만금-군산 미래산업 핵심거점</div>
-        </div>
-        <div class="news-arrow">→</div>
-      </a>
-
-      <!-- 서브 6: 쿠키뉴스 - 전북 1천만원 정책 -->
-      <a href="https://www.kukinews.com/article/view/kuk202605300008" target="_blank" rel="noopener noreferrer" class="news-item news-item-compact">
-        <div class="news-item-icon news-icon-press">📰</div>
-        <div class="news-item-body">
-          <div class="news-source">쿠키뉴스</div>
-          <div class="news-item-title">이원택 "전북에 살면 연 1천만원 드립니다"</div>
+          <div class="news-meta">
+            <span class="news-source">세계일보</span>
+          </div>
+          <div class="news-item-title">이원택 "무소속으론 전북 발전 한계…<br>전북성장공사로 경제 체질 바꿀 것"</div>
         </div>
         <div class="news-arrow">→</div>
       </a>
@@ -2523,19 +2605,6 @@
       </a>
     </div>
   </section>
-
-  <section class="picker-section alt">
-    <span class="section-tag gold">이원택의 약속</span>
-    <div class="promise-slogan-banner">
-      <span class="psb-line1">오로지 전북,</span>
-      <span class="psb-line2">반드시 체감성장</span>
-    </div>
-
-    <div class="promise-cat-grid" id="promiseCatGrid"></div>
-    <div id="promiseCatArea">
-      <div class="pledge-empty">↑ 위에서 분야 버튼을 눌러주시면<br>공약이 나타납니다</div>
-    </div>
-  </section>
   <!-- ===== 페이스북 게시물 ===== -->
   <section class="fb-section">
     <h2 class="fb-title">📘 이원택 페이스북</h2>
@@ -2548,9 +2617,10 @@
   </section>
 
   <!-- ===== 세대·계층별 공약 ===== -->
-  <section class="picker-section age-section">
-    <span class="section-tag gold">세대·계층별 공약</span>
-    <h2 class="section-title">우리 세대를 위한<br><span class="blue">맞춤형 공약</span></h2>
+  <section class="picker-section age-section" id="ageSection">
+    <div class="picker-header-center">
+      <span class="section-tag gold">이원택의 3대 약속</span>
+    </div>
 
     <div class="age-grid" id="ageGrid"></div>
     <div id="ageArea">
@@ -3063,154 +3133,6 @@
     setTimeout(() => area.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
   }
 
-  // ===== 이원택의 약속 (PDF 공보 기반 정밀 설계) =====
-  const promiseCatData = {
-    '어르신': {
-      icon: '👵', sub: '선배시민', color: '#c0392b',
-      label: '선배시민을 위한 공약',
-      slogan: '살던 집에서 끝까지, 살던 곳에서 존엄하게',
-      tagline: '전북형 AIP · 선배시민 예우',
-      groups: [
-        {
-          title: '돌봄과 일자리로 보답',
-          pledges: [
-            '손주돌봄수당 월 최대 60만 원 지원',
-            '어르신 일자리 1만 개 신설 (총 10만 개)',
-            '전북맞춤형 일자리 연 240억 원 투자'
-          ]
-        },
-        {
-          title: '경로당 중심 따뜻한 일상',
-          pledges: [
-            '경로당 5일 무상급식 · 주 2회 반찬',
-            '회장·총무 활동비 최대 10만 원',
-            '전북형 도농복합 실버타운 조성'
-          ]
-        },
-        {
-          title: '살던 곳에서 건강하고 안전하게',
-          pledges: [
-            '온-경로 비대면 진료 · 임플란트 4개 확대',
-            '전동휠체어 출장수리 · 그냥해드림센터',
-            '경로당 안전손잡이·문턱 제거'
-          ]
-        }
-      ]
-    },
-    '4050': {
-      icon: '💼', sub: '전북의 허리', color: '#1e6f3c',
-      label: '4050 지원 공약',
-      slogan: '4050세대, 이제 전북이 빚을 갚겠습니다',
-      tagline: '경험은 퇴직하지 않습니다',
-      groups: [
-        {
-          title: '이중돌봄 부담 완화',
-          pledges: [
-            '전북형 SOS 돌봄체계 구축',
-            '치매·요양·야간 긴급돌봄 확대',
-            '비대면 돌봄·의료체계 강화'
-          ]
-        },
-        {
-          title: '경력전환·재취업 지원',
-          pledges: [
-            '전북형 중장년 경력전환 플랫폼',
-            'AI·재생에너지 연계 전환교육',
-            '재취업 패키지 · 스타기업 채용 확대'
-          ]
-        },
-        {
-          title: '소상공인·노후 안심',
-          pledges: [
-            '1%대 초저금리 대환대출 · 공공배달앱',
-            '원스톱 성장지원센터 · 프랜차이즈 100개',
-            '평생교육 · 생애전환 · 노후 준비 지원'
-          ]
-        }
-      ]
-    },
-    '메가비전': {
-      icon: '🚀', sub: '200조 대전환', color: '#152484',
-      label: '메가비전 공약',
-      slogan: '"200조" 대한민국 산업지도를 다시 씁니다',
-      tagline: '새만금 200조 · 전북성장공사 프로젝트',
-      groups: [
-        {
-          title: '새만금 200조 AI반도체 국가산단',
-          pledges: [
-            '삼성전자·SK하이닉스 HBM·AI반도체 공장 유치',
-            '반도체 소부장 기업 100개사 동반 진출 · 새만금 규제자유특구',
-            '총 200조 투자 · 20만 개 이상 일자리 창출'
-          ]
-        },
-        {
-          title: '전북성장공사 (1호 공약, 군산 설립)',
-          pledges: [
-            '미래산업(피지컬AI, RE100 등) 성장 플랫폼',
-            '도민 참여 20조 원 메가펀드 (전북미래성장펀드 5조 + 국민성장펀드 15조)',
-            "매출 1천억 원 '전북형 스타기업' 100개 육성"
-          ]
-        },
-        {
-          title: '빠른 교통·미래 배후도시',
-          pledges: [
-            '호남선 고속열차 · 전라선 수서행 KTX 신설',
-            '전주를 교육·금융·문화 결합 미래형 배후도시 육성',
-            '새만금 국제학교 설립 · K-푸드혁신벨트'
-          ]
-        }
-      ]
-    }
-  };
-  const promiseCatOrder = ['어르신', '4050', '메가비전'];
-
-  document.getElementById('promiseCatGrid').innerHTML = promiseCatOrder.map(k => {
-    const d = promiseCatData[k];
-    return `<button class="promise-cat-btn" onclick="selectPromiseCat('${k}', this)" style="--cat-color:${d.color}">
-      <span class="promise-cat-icon">${d.icon}</span>
-      <span class="promise-cat-name">${k}</span>
-      <span class="promise-cat-sub">${d.sub}</span>
-    </button>`;
-  }).join('');
-
-  function selectPromiseCat(key, btnEl) {
-    document.querySelectorAll('.promise-cat-btn').forEach(b => b.classList.remove('active'));
-    btnEl.classList.add('active');
-    const d = promiseCatData[key];
-    const area = document.getElementById('promiseCatArea');
-
-    const groupsHtml = d.groups.map((g, gi) => `
-      <div class="pledge-group">
-        <div class="pledge-group-title" style="color:${d.color}">
-          <span class="pledge-core-num" style="background:${d.color}">핵심 ${gi+1}</span>
-          ${g.title}
-        </div>
-        <ul class="pledge-list">
-          ${g.pledges.map(p => `
-            <li class="pledge-item">
-              <span class="pledge-check" style="background:${d.color}">✓</span>
-              <span>${p}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-    `).join('');
-
-    area.innerHTML = `
-      <div class="pledge-box" style="border-color:${d.color}">
-        <div class="pledge-header" style="border-color:${d.color}22">
-          <div class="pledge-region" style="color:${d.color}">${d.icon} ${d.label || (key + ' 공약')}</div>
-        </div>
-        <div class="pledge-slogan" style="background:${d.color};">
-          <span class="pledge-slogan-tag">${d.tagline}</span>
-          ${d.slogan}
-        </div>
-        ${groupsHtml}
-      </div>
-    `;
-    setTimeout(() => area.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
-  }
-
   // ===== 세대·계층별 공약 (6분야) =====
   const ageData = {
     '청년': {
@@ -3263,18 +3185,18 @@
         '업종별 공동물류센터 · 재창업 안전망 구축'
       ]
     },
-    '문화·평생': {
-      icon: '🎨', sub: '문화·평생', color: '#7c3aed',
-      label: '삶과 함께하는 문화를 만들겠습니다',
+    '선배시민 어르신': {
+      icon: '👴', sub: '선배시민 어르신', color: '#7c3aed',
+      label: '어르신이 존중받는 전북을 만들겠습니다',
       pledges: [
-        '평생교육 거점 확충',
-        '전북 문화·여가 카드 확대',
-        '도서관·박물관 등 문화시설 접근성 강화',
+        '경로당 운영비 인상 및 식사 지원 확대',
+        '어르신 일자리 사업 확대',
+        '돌봄·요양 통합서비스 강화',
         "K-컬처 메카 'K-Story 콤플렉스' 조성"
       ]
     }
   };
-  const ageOrder = ['청년', '여성·가족', '아이·육아', '농어민', '소상공인', '문화·평생'];
+  const ageOrder = ['청년', '여성·가족', '아이·육아', '농어민', '소상공인', '선배시민 어르신'];
 
   document.getElementById('ageGrid').innerHTML = ageOrder.map(k => {
     const d = ageData[k];
