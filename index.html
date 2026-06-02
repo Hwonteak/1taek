@@ -66,7 +66,7 @@
     font-family: var(--font-base);
     background: var(--cream);
     color: var(--ink);
-    font-size: 17px;
+    font-size: 17.5px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
@@ -210,7 +210,7 @@
   .hero-appeal-subtitle {
     text-align: center;
     color: var(--gold);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 800;
     letter-spacing: -0.025em;
   }
@@ -219,7 +219,7 @@
   .appeal-headline {
     margin: 0;
     color: white;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 700;
     line-height: 1.45;
     letter-spacing: -0.03em;
@@ -227,7 +227,7 @@
   .appeal-headline strong {
     display: inline;
     
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 900;
     color: var(--gold);
     text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
@@ -299,17 +299,17 @@
     font-size: 32px !important;
   }
   .hero-promise-featured .hero-promise-label {
-    font-size: 21px !important;
+    font-size: 22px !important;
     font-weight: 900 !important;
     letter-spacing: -0.035em !important;
   }
   .hero-promise-featured .hero-promise-body {
-    font-size: 17px !important;
-    line-height: 1.65 !important;
+    font-size: 17.5px !important;
+    line-height: 1.7 !important;
     font-weight: 700 !important;
   }
   .hero-promise-featured .hero-promise-body strong {
-    font-size: 19px !important;
+    font-size: 20px !important;
     font-weight: 900 !important;
     color: #1e8449 !important;
     margin-bottom: 6px !important;
@@ -360,7 +360,7 @@
     padding: 2px 0 2px 14px;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--ink);
     letter-spacing: -0.025em;
   }
@@ -381,6 +381,163 @@
     font-weight: 700;
   }
 
+  /* ===== 이원택 긴급호소문 (50대 친화) ===== */
+  .appeal-letter {
+    max-width: 480px;
+    margin: 20px auto 18px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.32);
+    overflow: hidden;
+    border: 4px solid var(--warn-red);
+  }
+  
+  .appeal-letter-summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 20px;
+    cursor: pointer;
+    list-style: none;
+    background: linear-gradient(180deg, #fff4f4 0%, white 100%);
+    min-height: 70px;
+  }
+  .appeal-letter-summary::-webkit-details-marker { display: none; }
+  .appeal-letter-summary:hover { background: #ffe9e9; }
+  .appeal-letter-summary:active { background: #ffd5d5; }
+  
+  /* 긴급 배지 */
+  .appeal-letter-badge {
+    flex-shrink: 0;
+    background: var(--warn-red);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    box-shadow: 0 3px 10px rgba(217,40,40,0.4);
+    text-align: center;
+    min-width: 64px;
+  }
+  
+  .appeal-letter-titles {
+    flex: 1;
+  }
+  .appeal-letter-subtitle {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--warn-red);
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  .appeal-letter-cta {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--dp-blue);
+    letter-spacing: -0.025em;
+  }
+  
+  /* 펼쳐졌을 때 */
+  .appeal-letter[open] .appeal-letter-summary {
+    background: var(--warn-red);
+  }
+  .appeal-letter[open] .appeal-letter-subtitle {
+    color: white;
+  }
+  .appeal-letter[open] .appeal-letter-cta {
+    color: rgba(255,255,255,0.95);
+  }
+  .appeal-letter[open] .appeal-letter-badge {
+    background: white;
+    color: var(--warn-red);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+  .appeal-letter[open] .appeal-letter-cta::before {
+    content: "닫기 ▲";
+  }
+  .appeal-letter[open] .appeal-letter-cta {
+    font-size: 0;
+  }
+  .appeal-letter[open] .appeal-letter-cta::before {
+    font-size: 14.5px;
+  }
+  
+  /* 호소문 본문 */
+  .appeal-letter-body {
+    padding: 26px 22px 30px;
+    max-height: 75vh;
+    overflow-y: auto;
+    background: white;
+  }
+  .appeal-letter-body p {
+    margin: 0 0 16px 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+  }
+  .appeal-letter-body p strong {
+    font-weight: 900;
+    color: var(--dp-blue-deep);
+  }
+  .appeal-letter-body p em {
+    font-style: normal;
+    background: #fff4f4;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: var(--warn-red);
+    font-weight: 800;
+  }
+  
+  /* 강조 문장 */
+  .appeal-letter-body .appeal-emphasis {
+    margin: 20px 0;
+    padding: 16px 18px;
+    background: linear-gradient(180deg, #fff7f5 0%, #fff4f0 100%);
+    border-left: 6px solid var(--warn-red);
+    border-radius: 8px;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    color: var(--warn-red) !important;
+    line-height: 1.65 !important;
+  }
+  
+  /* 최종 결론 */
+  .appeal-letter-body .appeal-final {
+    margin: 24px 0;
+    padding: 22px 18px;
+    background: linear-gradient(135deg, var(--dp-blue-deep) 0%, var(--dp-blue) 100%);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 23px !important;
+    font-weight: 900 !important;
+    color: var(--gold) !important;
+    letter-spacing: -0.03em;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+    line-height: 1.4 !important;
+  }
+  
+  /* 서명 */
+  .appeal-letter-body .appeal-signature {
+    margin: 24px 0 0 0;
+    padding-top: 20px;
+    border-top: 2px dashed #c0c0c0;
+    text-align: center;
+    font-size: 16px !important;
+    color: var(--ink) !important;
+    line-height: 1.7 !important;
+    font-weight: 700;
+  }
+  .appeal-letter-body .appeal-signature strong {
+    font-size: 22px;
+    color: var(--dp-blue-deep);
+    font-weight: 900;
+  }
+
   /* 마무리 다짐 메시지 */
   .hero-pledge {
     max-width: 480px;
@@ -393,16 +550,16 @@
   }
   .hero-pledge p {
     margin: 0;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 800;
     color: var(--dp-blue-deep);
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: -0.025em;
   }
   .hero-pledge p strong {
     display: inline-block;
     margin-top: 4px;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 900;
     color: var(--dp-blue-deep);
   }
@@ -458,7 +615,7 @@
     font-size: 22px;
     font-weight: 900;
     letter-spacing: -0.035em;
-    line-height: 1.5;
+    line-height: 1.6;
     white-space: nowrap;
   }
   .team-card.red .team-headline { color: var(--warn-red); font-size: 20px; }
@@ -539,7 +696,7 @@
     font-size: 23px;
     font-weight: 900;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: -0.02em;
   }
   .team-card.blue .team-result { background: var(--gold); color: var(--dp-blue-deep); }
@@ -562,7 +719,7 @@
     font-weight: 800;
     color: white;
     letter-spacing: -0.02em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 4px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.8);
   }
@@ -640,7 +797,7 @@
     font-size: 20px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 18px;
     text-align: center;
   }
@@ -761,7 +918,7 @@
     border-top: 1px solid var(--line);
   }
   .fb-title {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 900;
     color: var(--ink);
     margin: 0 0 10px 0;
@@ -800,7 +957,7 @@
     font-size: 15px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .fb-big-card-arrow {
     font-size: 20px;
@@ -922,7 +1079,7 @@
     font-size: 16px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .top-notice-sub {
     font-size: 14px;
@@ -1008,7 +1165,7 @@
     background: white;
     border: 1.5px solid var(--line);
     border-radius: 12px;
-    padding: 18px 16px; 14px;
+    padding: 20px 18px; 14px;
     position: relative;
     transition: all 0.15s;
   }
@@ -1045,7 +1202,7 @@
     color: white;
     padding: 6px 12px;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 900;
     letter-spacing: 0;
     flex-shrink: 0;
@@ -1077,25 +1234,25 @@
   /* 본문 */
   .schedule-body { padding-left: 2px; }
   .schedule-place {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 4px;
   }
   .schedule-detail {
-    font-size: 15.5px;
+    font-size: 16px;
     color: var(--muted);
     line-height: 1.45;
     margin-bottom: 6px;
     font-weight: 600;
   }
   .schedule-addr {
-    font-size: 15px;
+    font-size: 15.5px;
     color: var(--ink);
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 10px;
   }
   
@@ -1111,7 +1268,7 @@
     text-align: center;
     padding: 10px 14px;
     border-radius: 9px;
-    font-size: 15px;
+    font-size: 15.5px;
     font-weight: 900;
     text-decoration: none;
     letter-spacing: -0.025em;
@@ -1141,9 +1298,9 @@
     box-shadow: 0 4px 16px rgba(232,180,18,0.25) !important;
   }
   .news-item-mega .news-item-title {
-    font-size: 20px !important;
+    font-size: 21px !important;
     font-weight: 900 !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     color: var(--ink) !important;
   }
   .news-item-mega .news-source {
@@ -1192,7 +1349,7 @@
     background: #FEE500;
     color: #181600;
     border: none;
-    padding: 20px 18px;
+    padding: 22px 20px;
     border-radius: 16px;
     cursor: pointer;
     font-family: var(--font-base);
@@ -1218,13 +1375,13 @@
     text-align: left;
   }
   .share-btn-mega-main {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .share-btn-mega-sub {
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: 700;
     opacity: 0.75;
     margin-top: 3px;
@@ -1388,7 +1545,7 @@
     font-weight: 900;
     color: white;
     letter-spacing: -0.035em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 16px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
@@ -1424,12 +1581,12 @@
     font-weight: 800;
     letter-spacing: -0.02em;
     box-shadow: 0 3px 8px rgba(0,0,0,0.18);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   /* compact 카드 (작게) */
   .news-item-compact {
-    padding: 10px 14px !important;
+    padding: 18px 16px; !important;
     gap: 12px !important;
   }
   .news-item-compact .news-item-icon {
@@ -1439,13 +1596,13 @@
     border-radius: 10px !important;
   }
   .news-item-compact .news-source {
-    font-size: 14.5px !important;
+    font-size: 15px !important;
     margin-bottom: 4px;
     font-weight: 700;
   }
   .news-item-compact .news-item-title {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
+    font-size: 17px !important;
+    line-height: 1.6 !important;
     font-weight: 800 !important;
   }
   .news-item-compact .news-arrow {
@@ -1470,7 +1627,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 18px 16px;
+    padding: 20px 18px;
     background: white;
     border: 2px solid var(--dp-blue-line);
     border-radius: 14px;
@@ -1568,7 +1725,7 @@
     font-weight: 800;
     color: var(--ink);
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .news-comments {
     display: inline-flex;
@@ -1617,7 +1774,7 @@
     display: inline-block;
     background: var(--dp-blue);
     color: white;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 900;
     padding: 10px 18px;
     border-radius: 999px;
@@ -1628,11 +1785,11 @@
     color: var(--dp-blue-deep);
   }
   .section-title {
-    font-size: 26px;
+    font-size: 27px;
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.035em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-top: 10px;
   }
   .section-title .blue { color: var(--dp-blue); }
@@ -1693,7 +1850,7 @@
     font-size: 25px;
     font-weight: 900;
     letter-spacing: -0.03em;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .promise-title .accent { color: var(--gold); }
   .promise-desc {
@@ -1860,7 +2017,7 @@
     border-radius: 10px;
     margin-bottom: 12px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .pledge-list { list-style: none; display: grid; gap: 12px; }
   .pledge-item {
@@ -1869,7 +2026,7 @@
     background: var(--cream);
     border-radius: 12px;
     font-size: 21px;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: 600;
   }
   .pledge-check {
@@ -1940,7 +2097,7 @@
     font-weight: 900;
     color: var(--ink);
     letter-spacing: -0.03em;
-    line-height: 1.5;
+    line-height: 1.6;
     white-space: nowrap;
   }
   .addr-title .blue { color: var(--dp-blue); }
@@ -2027,7 +2184,7 @@
     font-size: 19px;
     color: var(--ink);
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .station-floor {
     display: inline-block;
@@ -2138,7 +2295,7 @@
     font-size: 22px;
     font-weight: 900;
     color: var(--ink);
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: -0.03em;
     margin-bottom: 10px;
   }
@@ -2196,7 +2353,7 @@
     font-weight: 900;
     color: var(--dp-blue);
     letter-spacing: -0.025em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 3px;
   }
   .career-period {
@@ -2230,7 +2387,7 @@
     font-size: 14px;
     color: var(--muted);
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     padding: 6px 10px;
     background: var(--cream);
     border-radius: 6px;
@@ -2254,7 +2411,7 @@
     font-size: 14px;
     font-weight: 700;
     color: var(--dp-blue);
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: -0.02em;
     font-style: normal;
   }
@@ -2313,7 +2470,7 @@
     color: rgba(255,255,255,0.92);
     font-size: 16px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 14px;
     padding-bottom: 14px;
     border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -2362,14 +2519,91 @@
     <div class="hero-video-section">
       <div class="hero-video-wrap">
         <div class="hero-video">
-          <iframe src="https://www.youtube.com/embed/ozffD4M-wX8?si=kqg1O5Bd4j2nlACt" 
+          <iframe src="https://www.youtube.com/embed/OXXPcdTGQBM" 
             title="이원택 후보 호소 영상" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen></iframe>
         </div>
       </div>
-      
+      <!-- 이원택 호소문 (펼치기) -->
+      <details class="appeal-letter">
+        <summary class="appeal-letter-summary">
+          <div class="appeal-letter-badge">🚨 긴급</div>
+          <div class="appeal-letter-titles">
+            <div class="appeal-letter-subtitle">이원택의 긴급호소문</div>
+            <div class="appeal-letter-cta">📖 전문보기 클릭 ▼</div>
+          </div>
+        </summary>
+        <div class="appeal-letter-body">
+          <p>존경하는 전북도민 여러분.<br>사랑하는 전북도민 여러분,<br>민주당 원팀 도지사 후보 이원택입니다.</p>
+
+<p>도민여러분,<br><strong>저 이원택 정말 간절합니다.</strong></p>
+
+<p>제가 도지사가 되고 싶어서가 아니라<br>전북이 이 기회를 또 놓칠까 봐, 그것이 두려워 간절합니다.</p>
+
+<p>선거전 마지막 여론조사에서<br>저 이원택이 <strong>46%</strong>로 오차범위 밖에서 앞서고 있습니다.</p>
+
+<p>하지만 저는 안심할 수 없습니다.<br>여론조사, 앞서고 있지만 잠이 오지 않습니다.<br>국민의힘 지지층이 무소속으로 모이는 흐름이 있고<br>무소속은 민주당 후보 행세를 하고 있어 전북이 혼란스럽기 때문입니다.</p>
+
+<p><strong>도민 여러분,</strong><br>지금 전국이 요동치고 있습니다.</p>
+
+<p>박근혜가 전국을 누비고 있습니다.<br>이명박이 서울에 나타났습니다.<br>내란으로 심판받았던 세력이 다시 목소리를 높이고 있습니다.</p>
+
+<p>민주당이 앞섰던 서울과 부산, 이제 박빙입니다.<br>이번 선거에서 민주당이 압승하지 못한다면,<br>윤어게인 세력이 다시 활개를 칩니다.</p>
+
+<p class="appeal-emphasis">전북의 선택이 잘못되면 전국이 흔들립니다.</p>
+
+<p>만에 하나라도 비민주당 도지사가 당선되면,<br>국민의힘은 이렇게 말할 것입니다.<br><em>'민주당이 본진에서 심판받았다.'</em><br>이 뉴스가 다음 날 모든 신문 1면을 덮을 것입니다.</p>
+
+<p>국민의힘은 4년 내내 이것을 무기로 삼을 것입니다.<br>이재명 대통령의 국정 동력은 반토막 납니다.<br><strong>전북이 무너지면 결국 전국이 무너집니다.</strong></p>
+
+<p>사랑하는 전북도민 여러분,<br>2006년 지방선거를 기억하십니까.<br>한나라당이 12석을 싹쓸이하던 그 참혹한 시절이었습니다.<br>민주당의 전신은 전국에서 딱 1석 얻었습니다.<br><strong>그 1석을 지켜준 곳이 바로 우리 전북입니다.</strong><br>가장 힘들 때 민주당의 적통을 지켜준 것은 전북의 자존심입니다.</p>
+
+<p>도민 여러분, 저도 잘 압니다.<br>민주당에 서운한 마음, 충분히 이해합니다.</p>
+
+<p class="appeal-emphasis">약속드립니다.<br>전북을 당연하게 생각하지 않는 민주당 만들겠습니다.</p>
+
+<p>이재명 대통령께 매달리고 호소해서라도<br>전북에 더 큰 힘을 실어달라고 떼를 쓰겠습니다.<br>민주당에 더는 서운한 마음이 안 들도록 하겠습니다.</p>
+
+<p>하지만 서운함 때문에<br>자격 없는 사람을 뽑을 수는 없습니다.<br>지금은 민주당 대통령, 민주당 정부,<br><strong>민주당 도지사가 하나가 되어야 합니다.</strong><br>전북을 도약시킬 수 있는 결정적 순간입니다.</p>
+
+<p>전북의 시간을 또 놓칠 것인가,<br>아니면 전북의 대도약을 만들어낼 것인가,<br><strong>지금이 그 선택의 순간입니다.</strong></p>
+
+<p>무소속후보도 어차피 민주당 사람이라고 말씀하시는 분이 있다고 합니다.</p>
+
+<p class="appeal-emphasis">아닙니다.<br>무소속 후보는 절대 민주당 사람이 아닙니다.</p>
+
+<p><strong>첫째,</strong> 현금 살포하다 걸렸습니다. 전 국민이 목격했습니다.</p>
+<p><strong>둘째,</strong> 복당은 절대 없습니다. 현금 살포 제명자를 다시 받는 순간, 민주당은 현금살포당이 되게 됩니다. 복당은 불가능합니다.</p>
+<p><strong>셋째,</strong> 국민의힘 지지층이 더 환호하고 있습니다. 진짜 민주당 사람이라면 왜 그들이 지지하겠습니까?</p>
+
+<p>민주당 지지자 여러분,<br>언제부터 우리가 국민의힘과 같은 길을 걸었습니까.</p>
+
+<p>새만금 200조 투자유치, 전북성장공사 설립.<br>누가 이재명 대통령과 원팀으로<br>이런 큰 일을 해낼 수 있겠습니까.<br>오늘 선언한 '호남·제주 초광역 경제권'도<br>민주당 도지사여야 가능한 일입니다.</p>
+
+<p>중앙정부와 민주당을 움직이고,<br>전북의 몫을 끝까지, 악착같이 챙길<br><strong>집권여당의 도지사가 필요합니다.</strong></p>
+
+<p>도민 여러분,<br>제발 같이해주십시오.<br>저 이원택,<br><strong>표값 아깝지 않은 도지사가 되겠습니다.</strong></p>
+
+<p>저는 국회에서도<br>새만금 예산을 지키려,<br>또 농민 예산을 지키려,<br>삭발투쟁을 두 번 했습니다.</p>
+
+<p>오로지 전북만 보고 살아왔습니다.<br>도민의 삶을 바꾸는 일이라면<br>쓰러지는 한이 있어도 나아가겠습니다.</p>
+
+<p class="appeal-emphasis">반드시 전북을 성장시키겠습니다.</p>
+
+<p>이원택을 택하시면 이재명 대통령에게 힘이 실립니다.<br>힘이 실린 대통령은 더 많은 기회를 전북에 줄 수 있습니다.</p>
+
+<p>저 이원택, 오로지 민주당으로 살아왔습니다.<br><strong>반드시 전북 귀한 줄 아는 민주당을 만들겠습니다.</strong></p>
+
+<p>2006년 민주당을 지킨 전북의 자존심,<br>6월 3일 다시 한번 보여주십시오.<br><strong>전북의 선택이 대한민국의 선택입니다.</strong></p>
+
+<p class="appeal-final">오로지 전북, 반드시 체감성장.</p>
+
+<p class="appeal-signature">기호 1번 더불어민주당<br>전북특별자치도지사 후보 <strong>이원택</strong>입니다.<br><br>감사합니다.</p>
+        </div>
+      </details>
+
       <!-- 슬로건 + 3대 약속 (하나의 묶음) -->
       <div class="hero-appeal">
         <div class="hero-appeal-box">
