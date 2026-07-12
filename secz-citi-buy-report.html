@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Securitize (NYSE: SECZ) 매수 분석 보고서</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+  :root {
+    --font-base: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
+                 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    /* chrome & ink (light) */
+    --surface-1: #fcfcfb;
+    --page: #f9f9f7;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    /* series & status */
+    --series-1: #2a78d6;
+    --delta-up: #006300;
+    --delta-down: #d03b3b;
+    --warn-bg: #fdf6e3;
+    --warn-line: #e8d9a8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #1a1a19;
+      --page: #0d0d0d;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5;
+      --delta-up: #0ca30c;
+      --delta-down: #d03b3b;
+      --warn-bg: #262212;
+      --warn-line: #4a4123;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-base);
+    background: var(--page);
+    color: var(--ink);
+    font-size: 16.5px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 18px 60px; }
+
+  /* ===== 비공식 자료 고지 ===== */
+  .notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--ink-2);
+    margin-bottom: 22px;
+  }
+  .notice strong { color: var(--ink); }
+
+  /* ===== 헤더 ===== */
+  .report-kicker {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  h1 { font-size: 27px; font-weight: 800; line-height: 1.35; margin-bottom: 4px; }
+  .subtitle { color: var(--ink-2); font-size: 15.5px; margin-bottom: 18px; }
+
+  .rating-card {
+    display: flex; flex-wrap: wrap; gap: 0;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .rating-cell {
+    flex: 1 1 25%; min-width: 130px;
+    padding: 14px 16px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .rating-cell:last-child { border-right: none; }
+  .rating-label { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .rating-value { font-size: 21px; font-weight: 700; }
+  .rating-value.buy { color: var(--delta-up); }
+  .rating-sub { font-size: 12.5px; color: var(--ink-2); }
+  .up { color: var(--delta-up); font-weight: 700; }
+  .down { color: var(--delta-down); font-weight: 700; }
+
+  .meta-line { font-size: 13px; color: var(--muted); margin-bottom: 30px; }
+
+  /* ===== KPI 타일 ===== */
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+    margin: 18px 0 8px;
+  }
+  @media (min-width: 640px) { .kpi-row { grid-template-columns: repeat(4, 1fr); } }
+  .stat {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 15px;
+  }
+  .stat-label { font-size: 12.5px; color: var(--muted); font-weight: 600; line-height: 1.4; }
+  .stat-value { font-size: 23px; font-weight: 650; margin-top: 2px; }
+  .stat-delta { font-size: 12.5px; margin-top: 1px; }
+  .stat-note { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+  /* ===== 본문 ===== */
+  section { margin-top: 38px; }
+  h2 {
+    font-size: 19px; font-weight: 800; margin-bottom: 12px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--ink);
+  }
+  h3 { font-size: 16px; font-weight: 700; margin: 18px 0 6px; }
+  p { margin-bottom: 12px; color: var(--ink); }
+  p.dim, li.dim { color: var(--ink-2); }
+  ul, ol { padding-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 7px; }
+  .point-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--series-1); color: #fff;
+    font-size: 12.5px; font-weight: 800; margin-right: 8px;
+    vertical-align: -3px;
+  }
+
+  /* ===== 표 ===== */
+  .tbl-scroll { overflow-x: auto; }
+  table {
+    width: 100%; border-collapse: collapse;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    font-size: 14.5px;
+  }
+  th, td { padding: 10px 13px; text-align: left; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  th { font-size: 13px; color: var(--muted); font-weight: 700; background: transparent; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  /* ===== 차트 카드 ===== */
+  .viz-root {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 18px 10px;
+    margin: 16px 0;
+    position: relative;
+  }
+  .viz-title { font-size: 15.5px; font-weight: 700; }
+  .viz-sub { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .viz-root svg { display: block; width: 100%; height: auto; }
+  .bar-band { cursor: default; outline: none; }
+  .bar-band:focus-visible rect.bar,
+  .bar-band:hover rect.bar { opacity: 0.85; }
+  .viz-tip {
+    position: absolute; pointer-events: none; z-index: 5;
+    background: var(--ink); color: var(--page);
+    font-size: 12.5px; line-height: 1.5;
+    padding: 7px 11px; border-radius: 8px;
+    opacity: 0; transition: opacity 0.12s;
+    white-space: nowrap;
+    transform: translate(-50%, -110%);
+  }
+  .viz-tip.show { opacity: 1; }
+  .viz-foot { font-size: 12px; color: var(--muted); padding: 8px 2px 6px; }
+
+  /* ===== 출처/면책 ===== */
+  .src-list { font-size: 13.5px; color: var(--ink-2); }
+  .src-list a { color: var(--series-1); text-decoration: none; word-break: break-all; }
+  .src-list a:hover { text-decoration: underline; }
+  .disclaimer {
+    margin-top: 34px; padding: 16px 18px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 13px; color: var(--ink-2); line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="notice">
+    ⚠️ <strong>비공식 참고자료</strong> — 본 문서는 Citigroup(씨티그룹)의 공식 리서치 보고서가
+    <strong>아닙니다</strong>. Citi가 발간한 토큰화 시장 전망 자료를 근거의 하나로 인용해,
+    셀사이드 리서치 형식을 참고하여 AI가 작성한 개인 참고용 분석입니다. 투자 권유가 아닙니다.
+  </div>
+
+  <div class="report-kicker">Equity Research · Digital Assets / Tokenization</div>
+  <h1>Securitize Corp. (NYSE: SECZ)</h1>
+  <p class="subtitle">세계 유일 '순수 토큰화' 상장사 — 실물자산(RWA) 토큰화 시대의 인프라 대장주</p>
+
+  <div class="rating-card">
+    <div class="rating-cell">
+      <div class="rating-label">투자의견</div>
+      <div class="rating-value buy">매수 (Buy)</div>
+    </div>
+    <div class="rating-cell">
+      <div class="rating-label">목표주가 (12개월)</div>
+      <div class="rating-value">$14.00</div>
+      <div class="rating-sub">시나리오 베이스 (본 보고서 추정)</div>
+    </div>
+    <div class="rating-cell">
+      <div class="rating-label">현재주가</div>
+      <div class="rating-value">$8.00</div>
+      <div class="rating-sub">2026-07-11 종가 기준</div>
+    </div>
+    <div class="rating-cell">
+      <div class="rating-label">상승여력</div>
+      <div class="rating-value up">+75%</div>
+    </div>
+  </div>
+  <div class="meta-line">작성일 2026-07-12 · 종목: Securitize Corp. · 거래소: NYSE · 티커: SECZ · 섹터: 금융 인프라 / 디지털자산</div>
+
+  <div class="kpi-row">
+    <div class="stat">
+      <div class="stat-label">현재주가 (7/11 종가)</div>
+      <div class="stat-value">$8.00</div>
+      <div class="stat-delta down">−20% vs SPAC 기준가 $10</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">플랫폼 토큰화 AUM</div>
+      <div class="stat-value">$40억+</div>
+      <div class="stat-note">2026년 4월 기준</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">상장 시 조달 자금</div>
+      <div class="stat-value">약 $4억</div>
+      <div class="stat-note">PIPE $1.97억 포함</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">합병 기업가치</div>
+      <div class="stat-value">$12.5억</div>
+      <div class="stat-note">프리머니 기준</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>1. 요약 (Executive Summary)</h2>
+    <p>
+      Securitize는 <strong>2026년 7월 2일 NYSE에 상장한 세계 최초의 '순수(pure-play) 토큰화 인프라' 상장기업</strong>이다.
+      Cantor Equity Partners II(CEPT)와의 SPAC 합병(6월 29일 주주 승인)을 통해 프리머니 기업가치 약 12.5억 달러로
+      상장했으며, PIPE 1.97억 달러를 포함해 약 4억 달러를 조달했다.
+    </p>
+    <p>
+      동사는 BlackRock의 토큰화 머니마켓펀드 <strong>BUIDL</strong>(출시 약 14개월 만에 23억 달러 도달)의 발행·운영을
+      담당하는 등 플랫폼 토큰화 AUM이 40억 달러를 넘어섰고, NYSE와는 <strong>24시간 토큰화 주식·ETF 거래 플랫폼의
+      디지털 명의개서 대행(digital transfer agent)</strong> MOU를 체결했다. 상장사이면서 동시에 거래소 인프라의
+      핵심 파트너인 독특한 위치다.
+    </p>
+    <p>
+      Citi는 토큰화 시장이 <strong>2030년까지 4~5조 달러</strong>(최근 인용 기준 최대 5.5조 달러)로 성장할 것으로
+      전망한 바 있다. 이 구조적 성장의 최전선에 있는 유일한 상장 순수 플레이어가 SPAC 기준가($10) 대비 약 20%
+      할인된 $8에 거래되고 있다는 점에서, 높은 변동성을 감내할 수 있는 투자자에게 <strong>매수(Buy)</strong> 의견을
+      제시한다. 시나리오 베이스 목표주가는 <strong>$14</strong>(상승여력 +75%)다.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. 기업 개요</h2>
+    <p>
+      Securitize(CEO Carlos Domingo)는 펀드·채권·주식 등 실물 금융자산을 블록체인 위의 디지털 증권으로
+      발행·관리하는 플랫폼이다. SEC 등록 명의개서 대행(transfer agent), 펀드 관리, 브로커-딜러/ATS(대체거래소)
+      기능을 수직 통합해 <strong>발행 → 청약(KYC/AML) → 배당·이자 지급 → 유통</strong>까지 토큰화 증권의 전 과정을 처리한다.
+    </p>
+    <ul>
+      <li><strong>대표 실적</strong>: BlackRock BUIDL(토큰화 국채 MMF), Apollo 크레딧 펀드(ACRED), Hamilton Lane·KKR 사모펀드 토큰화, VanEck VBILL 등 대형 운용사 다수를 고객으로 확보.</li>
+      <li><strong>상장 첫날 자사 주식을 직접 토큰화</strong>해 온체인 발행 — 자사 기술의 쇼케이스.</li>
+      <li class="dim">2026년 7월 6일 CoinDesk 인터뷰에서 CEO는 약 4억 달러의 현금을 바탕으로 <strong>인수합병(M&A)을 통한 확장</strong> 의사를 밝힘.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. 투자 포인트</h2>
+    <h3><span class="point-num">1</span>유일한 순수 토큰화 상장사 — 희소성 프리미엄</h3>
+    <p class="dim">
+      RWA 토큰화에 투자할 수 있는 순수 상장 수단은 현재 SECZ가 유일하다. 기관 자금이 이 테마에 배분될 때
+      선택지가 사실상 하나라는 점은 수급상 강력한 우위다.
+    </p>
+    <h3><span class="point-num">2</span>기관 채택의 가속 — BlackRock이 검증한 플랫폼</h3>
+    <p class="dim">
+      BUIDL이 14개월 만에 0 → 23억 달러로 성장하는 등 세계 최대 운용사들이 동사 인프라를 반복 선택하고 있다.
+      토큰화 AUM 40억 달러+는 경쟁사 대비 압도적이며, AUM 기반 수수료는 반복 매출 성격을 가진다.
+    </p>
+    <h3><span class="point-num">3</span>NYSE 파트너십 — '거래소의 배관'이 되는 회사</h3>
+    <p class="dim">
+      NYSE의 24/7 토큰화 주식·ETF 거래 플랫폼에서 디지털 명의개서 대행을 맡는 MOU를 체결했다. 실현 시
+      단순 크립토 기업이 아니라 미국 주식시장 인프라의 일부로 자리매김하게 된다.
+    </p>
+    <h3><span class="point-num">4</span>Citi가 그리는 TAM — 2030년 4~5조 달러</h3>
+    <p class="dim">
+      Citi(Citi GPS)는 2030년까지 토큰화 디지털 증권 시장을 4~5조 달러로 전망했다(최근 보도 인용 기준 최대
+      5.5조 달러). 현재 토큰화된 RWA는 수백억 달러 수준으로, 전망 대비 침투율이 1%에도 못 미친다 —
+      초기 국면의 구조적 성장 스토리다.
+    </p>
+    <h3><span class="point-num">5</span>약 4억 달러의 실탄 — M&A 옵션</h3>
+    <p class="dim">
+      상장으로 확보한 현금은 시가총액 대비 매우 큰 규모로, 인접 영역(수탁, 유통, 해외 인프라) 인수를 통한
+      비유기적 성장 여력을 제공한다.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. 밸류에이션 — 시나리오 분석</h2>
+    <p>
+      상장 직후로 공개된 재무 정보가 제한적이어서 전통적 멀티플 밸류에이션보다는 시나리오 접근이 적절하다.
+      참고로 현재 유일한 공식 커버리지인 Benchmark는 <strong>매수, 목표주가 $16</strong>을 제시하고 있다.
+      아래 시나리오와 목표주가는 본 보고서의 가정에 따른 예시적 추정이다.
+    </p>
+
+    <div class="viz-root" id="scenario-viz">
+      <div class="viz-title">12개월 시나리오별 목표주가</div>
+      <div class="viz-sub">현재주가 $8.00 (2026-07-11 종가) 대비 · 단위: USD</div>
+      <svg viewBox="0 0 680 240" role="img" aria-label="시나리오별 목표주가 가로 막대 차트. 약세 6달러, 기본 14달러, 강세 22달러. 현재주가 8달러 기준선 표시.">
+        <!-- gridlines: $0~$25, every $5 → x = 120 + v*20 -->
+        <g stroke="var(--grid)" stroke-width="1">
+          <line x1="120" y1="16" x2="120" y2="196"/>
+          <line x1="220" y1="16" x2="220" y2="196"/>
+          <line x1="320" y1="16" x2="320" y2="196"/>
+          <line x1="420" y1="16" x2="420" y2="196"/>
+          <line x1="520" y1="16" x2="520" y2="196"/>
+          <line x1="620" y1="16" x2="620" y2="196"/>
+        </g>
+        <!-- x-axis tick labels -->
+        <g fill="var(--muted)" font-size="12" font-variant="tabular-nums" text-anchor="middle">
+          <text x="120" y="216">$0</text>
+          <text x="220" y="216">$5</text>
+          <text x="320" y="216">$10</text>
+          <text x="420" y="216">$15</text>
+          <text x="520" y="216">$20</text>
+          <text x="620" y="216">$25</text>
+        </g>
+
+        <!-- current price reference line: $8 → x=280 -->
+        <line x1="280" y1="12" x2="280" y2="196" stroke="var(--baseline)" stroke-width="1.5"/>
+        <text x="286" y="14" fill="var(--ink-2)" font-size="12" font-weight="600">현재가 $8.00</text>
+
+        <!-- bars: band height 60, bar 22px, rounded data-end (right) only -->
+        <g class="bar-band" tabindex="0" data-name="약세 (Bear)" data-val="6.00" data-chg="−25%" data-why="채택 지연 · 락업 물량 부담">
+          <rect x="120" y="25" width="560" height="52" fill="transparent"/>
+          <path d="M120 40 H 236 a4 4 0 0 1 4 4 v 14 a4 4 0 0 1 -4 4 H 120 Z" fill="var(--series-1)" class="bar"/>
+          <text x="112" y="55" text-anchor="end" fill="var(--ink)" font-size="13.5" font-weight="600">약세</text>
+          <text x="248" y="55" fill="var(--ink)" font-size="13" font-weight="650">$6.00</text>
+        </g>
+        <g class="bar-band" tabindex="0" data-name="기본 (Base)" data-val="14.00" data-chg="+75%" data-why="AUM 성장 지속 · NYSE 플랫폼 가시화">
+          <rect x="120" y="85" width="560" height="52" fill="transparent"/>
+          <path d="M120 100 H 396 a4 4 0 0 1 4 4 v 14 a4 4 0 0 1 -4 4 H 120 Z" fill="var(--series-1)" class="bar"/>
+          <text x="112" y="115" text-anchor="end" fill="var(--ink)" font-size="13.5" font-weight="600">기본</text>
+          <text x="408" y="115" fill="var(--ink)" font-size="13" font-weight="650">$14.00</text>
+        </g>
+        <g class="bar-band" tabindex="0" data-name="강세 (Bull)" data-val="22.00" data-chg="+175%" data-why="NYSE 플랫폼 가동 · AUM $100억 · M&amp;A 성공">
+          <rect x="120" y="145" width="560" height="52" fill="transparent"/>
+          <path d="M120 160 H 556 a4 4 0 0 1 4 4 v 14 a4 4 0 0 1 -4 4 H 120 Z" fill="var(--series-1)" class="bar"/>
+          <text x="112" y="175" text-anchor="end" fill="var(--ink)" font-size="13.5" font-weight="600">강세</text>
+          <text x="568" y="175" fill="var(--ink)" font-size="13" font-weight="650">$22.00</text>
+        </g>
+
+        <!-- baseline -->
+        <line x1="120" y1="196" x2="640" y2="196" stroke="var(--baseline)" stroke-width="1"/>
+      </svg>
+      <div class="viz-tip" id="viz-tip" role="status"></div>
+      <div class="viz-foot">본 보고서의 가정에 따른 예시적 시나리오이며 실제 주가를 보장하지 않음</div>
+    </div>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>시나리오</th><th>목표주가</th><th>상승여력</th><th>핵심 가정</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>약세 (Bear)</td><td class="num">$6.00</td><td class="num">−25%</td>
+            <td>토큰화 채택 지연, 락업 해제·워런트發 물량 부담, SPAC 디스카운트 지속, 규제 불확실성 재부각</td>
+          </tr>
+          <tr>
+            <td><strong>기본 (Base)</strong></td><td class="num"><strong>$14.00</strong></td><td class="num"><strong>+75%</strong></td>
+            <td>토큰화 AUM 성장 지속(연 2배 수준), NYSE 플랫폼 진행 가시화, 신규 대형 운용사 온보딩 지속</td>
+          </tr>
+          <tr>
+            <td>강세 (Bull)</td><td class="num">$22.00</td><td class="num">+175%</td>
+            <td>NYSE 24/7 토큰화 거래 플랫폼 본격 가동, AUM $100억 돌파, 현금 활용 M&amp;A로 사업 영역 확장</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. 주요 리스크</h2>
+    <ol>
+      <li><strong>SPAC 상장주 특유의 수급</strong> — 락업 해제, 워런트·PIPE 물량 출회 시 희석 및 주가 압박. 이미 기준가 $10 대비 20% 하회 중이며, 유통물량이 적어 변동성이 매우 크다.</li>
+      <li><strong>규제 리스크</strong> — 토큰화 증권·스테이블코인 관련 미국 입법/SEC 규정의 진행 속도와 방향에 사업 성패가 좌우된다.</li>
+      <li><strong>고객 집중도</strong> — BlackRock(BUIDL) 등 소수 대형 고객 의존도가 높아, 대형 고객의 자체 인프라 내재화 시 타격이 크다.</li>
+      <li><strong>경쟁 심화</strong> — Coinbase·Ondo·Figure 등 크립토 진영과 전통 거래소·수탁은행의 자체 토큰화 인프라 구축이 동시에 진행 중이다.</li>
+      <li><strong>수익성 미검증</strong> — 상장 직후로 상세 실적 공시가 제한적이며, AUM 성장이 곧바로 이익으로 연결되는지 확인이 필요하다.</li>
+      <li><strong>거시/크립토 사이클</strong> — 디지털자산 시장 전반의 침체 시 토큰화 수요·밸류에이션이 동반 훼손될 수 있다.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>6. 참고 — Citi의 토큰화 시장 전망</h2>
+    <p class="dim">
+      Citi는 Citi GPS 보고서(<em>Money, Tokens and Games</em>, 2023)에서 <strong>2030년까지 토큰화 디지털 증권
+      4~5조 달러</strong>, 무역금융의 분산원장 처리 약 1조 달러 규모를 전망했다. 2026년 언론 인용 기준으로는
+      토큰화 시장이 <strong>2030년 최대 5.5조 달러</strong>에 이를 수 있다는 전망이 보도된 바 있다. 본 보고서의
+      'Buy' 논리는 이 구조적 TAM 전망 위에 서 있다 — 단, 해당 전망 자체가 빗나갈 가능성 역시 리스크다.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. 출처</h2>
+    <ul class="src-list">
+      <li><a href="https://finance.yahoo.com/markets/stocks/articles/securitize-lists-nyse-secz-backed-132942716.html" target="_blank" rel="noopener">Yahoo Finance — Securitize Lists on NYSE as SECZ: Backed by $400M Raise and BlackRock BUIDL</a></li>
+      <li><a href="https://www.coindesk.com/business/2026/07/06/securitize-eyes-acquisitions-with-usd400-million-war-chest-after-going-public-ceo-says" target="_blank" rel="noopener">CoinDesk — Securitize eyes acquisitions with $400M war chest after going public (2026-07-06)</a></li>
+      <li><a href="https://www.financemagnates.com/forex/securitize-set-to-trade-on-nyse-thursday-as-first-pure-play-tokenization-company/" target="_blank" rel="noopener">Finance Magnates — Securitize Set to Trade on NYSE as First Pure-Play Tokenization Company</a></li>
+      <li><a href="https://cryptobriefing.com/securitize-nyse-listing-tokenized-stock-secz/" target="_blank" rel="noopener">Crypto Briefing — Securitize rings the NYSE opening bell</a></li>
+      <li><a href="https://www.cryptotimes.io/2026/07/03/securitize-goes-public-on-nyse-as-secz-tokenizes-shares-on-day-one/" target="_blank" rel="noopener">The Crypto Times — Securitize Goes Public on NYSE as SECZ, Tokenizes Shares on Day One</a></li>
+      <li><a href="https://www.stocktitan.net/sec-filings/SECZ/8-k-securitize-holdings-inc-reports-material-event-fae1a4e91df9.html" target="_blank" rel="noopener">StockTitan — SECZ 8-K: CEPT merger &amp; $197M PIPE financing</a></li>
+      <li><a href="https://stockanalysis.com/stocks/secz/" target="_blank" rel="noopener">stockanalysis.com — SECZ 시세·개요</a></li>
+      <li><a href="https://www.tipranks.com/stocks/secz/stock-analysis" target="_blank" rel="noopener">TipRanks — SECZ 애널리스트 목표주가 (Benchmark Buy $16)</a></li>
+    </ul>
+  </section>
+
+  <div class="disclaimer">
+    <strong>면책조항</strong> — 본 자료는 AI가 공개 정보를 바탕으로 작성한 참고용 문서로, Citigroup 및 그 계열사의
+    공식 리서치 보고서가 아니며 Citigroup과 무관하게 작성되었습니다. 본문 중 'Citi'에 대한 언급은 공개된 시장 전망
+    자료의 인용에 한합니다. 목표주가와 시나리오는 예시적 가정에 따른 추정치로 실제 결과와 다를 수 있습니다.
+    본 자료는 특정 증권의 매수·매도를 권유하는 투자자문이 아니며, 투자 판단과 그 결과에 대한 책임은 투자자 본인에게
+    있습니다. 수치는 2026년 7월 11일(미국 기준) 종가 및 작성 시점의 공개 보도를 기준으로 하며 이후 변동될 수 있습니다.
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('scenario-viz');
+    var tip = document.getElementById('viz-tip');
+    if (!root || !tip) return;
+    var bands = root.querySelectorAll('.bar-band');
+    function show(band) {
+      tip.innerHTML = '<strong>' + band.dataset.name + '</strong> $' + band.dataset.val +
+        ' (' + band.dataset.chg + ')<br>' + band.dataset.why;
+      var r = band.getBoundingClientRect();
+      var host = root.getBoundingClientRect();
+      tip.style.left = (r.left - host.left + r.width / 2) + 'px';
+      tip.style.top = (r.top - host.top + 4) + 'px';
+      tip.classList.add('show');
+    }
+    function hide() { tip.classList.remove('show'); }
+    bands.forEach(function (b) {
+      b.addEventListener('mouseenter', function () { show(b); });
+      b.addEventListener('mouseleave', hide);
+      b.addEventListener('focus', function () { show(b); });
+      b.addEventListener('blur', hide);
+    });
+  })();
+</script>
+</body>
+</html>
